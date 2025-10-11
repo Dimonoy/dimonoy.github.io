@@ -1,0 +1,40 @@
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.projects__slide-show {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.projects__slides {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    width: 100%;
+}
+
+.projects__slide {
+    position: absolute;
+    height: 432px;
+    aspect-ratio: 16 / 9;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.projects__slide:first-child {
+    left: var(--gap);
+}
+
+.projects__slide:last-child {
+    right: var(--gap);
+}
+
+.projects__slide--visible {
+    height: 504px;
+    aspect-ratio: 16 / 9;
+    background-color: var(--primary-foreground-color);
+}

@@ -1,0 +1,44 @@
+.hidden {
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+}
+
+.shown {
+    opacity: 1;
+}
+
+@keyframes wavyGlowing {
+    0% {
+        filter: var(--drop-shadow-header) opacity(1);
+    }
+    10% {
+        filter: var(--drop-shadow-header) opacity(0.7);
+    }
+    20% {
+        filter: var(--drop-shadow-header) opacity(1);
+    }
+    30% {
+        filter: var(--drop-shadow-header) opacity(0.7);
+    }
+    40% {
+        filter: var(--drop-shadow-header) opacity(1);
+    }
+    50% {
+        filter: var(--drop-shadow-header) opacity(0.7);
+    }
+    60% {
+        filter: var(--drop-shadow-header) opacity(1);
+    }
+    70% {
+        filter: var(--drop-shadow-header) opacity(0.7);
+    }
+    80% {
+        filter: var(--drop-shadow-header) opacity(1);
+    }
+    90% {
+        filter: var(--drop-shadow-header) opacity(0.7);
+    }
+    100% {
+        filter: var(--drop-shadow-header) opacity(1);
+    }
+}
