@@ -55,7 +55,7 @@ html {
 }
 
 body {
-    background-color: var(--primary-background-color);
+    background-image: linear-gradient(to left, #222, #333);
     color: var(--primary-foreground-color);
     font-family: "Kanit", sans-serif;
     font-weight: var(--font-weight-normal);
@@ -63,6 +63,14 @@ body {
     cursor:
         url("../public/cursor/cursor.svg") 24 24,
         auto;
+}
+
+/* Mozilla browsers do not apply smoothing on linear gradient, hence, using a solid color */
+@-moz-document url-prefix() {
+    body {
+        background-image: none;
+        background-color: var(--primary-background-color);
+    }
 }
 
 button,

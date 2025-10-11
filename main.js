@@ -1,4 +1,5 @@
 import { setup as setupTechnologies } from "./modules/technologies.mjs";
+import { setup as setupProjects } from "./modules/projects.mjs";
 
 /* Resets active styles for menu elements */
 $("#header .menu__item").click((event) => {

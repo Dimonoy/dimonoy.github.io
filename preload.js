@@ -1,5 +1,6 @@
 import { loadSvg } from "./modules/svg.mjs";
 import { setup as setupTechnologies } from "./modules/technologies.mjs";
+import { setup as setupProjects } from "./modules/projects.mjs";
 import hiddenElementsToShow from "./modules/target_animation_elements.mjs";
 
 // Load SVG icons
@@ -14,14 +15,33 @@ import hiddenElementsToShow from "./modules/target_animation_elements.mjs";
   loadSvg("Kakaotalk", "svg-kakaotalk");
   loadSvg("Telegram", "svg-telegram");
 
-  loadSvg("Arrow-left", "slide-show-arrow-left");
-  loadSvg("Arrow-right", "slide-show-arrow-right");
+  loadSvg(
+    "Arrow-left",
+    "slide-show__arrow-left",
+    "projects__slide-show__arrow-left",
+  );
+  loadSvg(
+    "Arrow-right",
+    "slide-show__arrow-right",
+    "projects__slide-show__arrow-right",
+  );
 }
 
-// Initialize technologies
+let projectIndex = 0;
+
+// Initialize technologies and projects
 {
   setupTechnologies("web");
+  projectIndex = setupProjects(projectIndex);
 }
+
+$(document).on("click", "#slide-show__arrow-left", function () {
+  projectIndex = setupProjects(projectIndex - 1);
+});
+
+$(document).on("click", "#slide-show__arrow-right", function () {
+  projectIndex = setupProjects(projectIndex + 1);
+});
 
 /**
  * Check if the browser is Chrome
