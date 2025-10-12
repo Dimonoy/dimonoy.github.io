@@ -1,17 +1,1 @@
 TODO
-public/*
-extra/*
-!extra/.gitkeep
-!public/.gitkeep
-!public/icons/
-!public/fonts/
-!public/images/
-!public/cursor/
-public/icons/*
-public/fonts/*
-public/images/*
-public/cursor/*
-!public/icons/.gitkeep
-!public/fonts/.gitkeep
-!public/images/.gitkeep
-!public/cursor/.gitkeep
