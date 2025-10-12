@@ -9,7 +9,7 @@ Visit the live portfolio at: [Your Portfolio URL]
 ## 🛠️ Technologies Used
 
 - HTML/CSS/JS
-- Fontawesome icons
+- Fontawesome and material design icons
 - Javascript animations
 - No build tools
 

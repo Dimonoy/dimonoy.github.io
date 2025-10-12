@@ -1,3 +1,128 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7177809faa3b342a3ce79dd731831c50563fad2f3f376a535079a409bfa564f2
-size 3707
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="64"
+   height="64"
+   viewBox="0 0 64 64"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="cursor-glow.svg"
+   inkscape:export-filename="pointer.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="8"
+     inkscape:cx="2"
+     inkscape:cy="33.4375"
+     inkscape:window-width="1908"
+     inkscape:window-height="1016"
+     inkscape:window-x="6"
+     inkscape:window-y="58"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid20" />
+  </sodipodi:namedview>
+  <defs
+     id="defs9">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter1008-3"
+       x="-0.18599402"
+       y="-0.18516685"
+       width="1.371988"
+       height="1.3703337">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="4.8723311"
+         id="feGaussianBlur1010-6" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter959"
+       x="-0.55053631"
+       y="-0.54808792"
+       width="2.1010726"
+       height="2.0961758">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="14.421944"
+         id="feGaussianBlur961" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter963"
+       x="-0.15180918"
+       y="-0.15113404"
+       width="1.3036184"
+       height="1.3022681">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="3.9768193"
+         id="feGaussianBlur965" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="fill:#ffdd55;stroke-width:0.748918"
+       id="path223"
+       cx="31.525438"
+       cy="32.74007"
+       rx="12.901691"
+       ry="12.962324" />
+    <ellipse
+       style="opacity:0.44;fill:#ffdd55;stroke-width:1.82455;filter:url(#filter963)"
+       id="path223-36"
+       cx="31.573669"
+       cy="32.011623"
+       rx="31.435406"
+       ry="31.575832"
+       transform="matrix(0.64457174,0,0,0.62059875,11.222175,12.14525)" />
+    <ellipse
+       style="opacity:0.44;fill:#ffdd55;stroke-width:1.82455;filter:url(#filter1008-3)"
+       id="path223-36-7"
+       cx="31.573669"
+       cy="32.011623"
+       rx="31.435406"
+       ry="31.575832"
+       transform="matrix(0.67301148,0,0,0.65088864,10.774062,11.019132)" />
+    <ellipse
+       style="opacity:0.44;mix-blend-mode:normal;fill:#ffdd55;stroke-width:1.82455;filter:url(#filter959)"
+       id="path223-36-7-5"
+       cx="31.573669"
+       cy="32.011623"
+       rx="31.435406"
+       ry="31.575832"
+       transform="matrix(0.49032416,0,0,0.47806585,15.758203,17.05283)" />
+    <ellipse
+       style="fill:#000000;stroke-width:0.570753"
+       id="path223-3"
+       cx="31.681591"
+       cy="32.567093"
+       rx="9.8261967"
+       ry="9.8849525" />
+  </g>
+</svg>

@@ -11,8 +11,7 @@ import hiddenElementsToShow from "./modules/target_animation_elements.mjs";
   loadSvg("LinkedIn", "svg-linkedin");
   loadSvg("Gmail", "svg-email");
   loadSvg("VK", "svg-vk");
-  loadSvg("LinkedIn", "svg-linkedin-2");
-  loadSvg("Kakaotalk", "svg-kakaotalk");
+  loadSvg("LinkedIn-inverse", "svg-linkedin-2");
   loadSvg("Telegram", "svg-telegram");
 
   loadSvg(
