@@ -12,7 +12,7 @@ const technologies = {
     { title: "Docker", iconName: "Docker" },
   ],
   data: [
-    { title: "SQL", iconName: "React" },
+    { title: "SQL", iconName: "SQL" },
     { title: "PyTorch", iconName: "PyTorch" },
     { title: "Sklearn", iconName: "Sklearn" },
     { title: "OpenCV", iconName: "OpenCV" },
@@ -25,6 +25,12 @@ const technologies = {
   ],
 };
 
+// Labels: {iconName} {title}
+const htmlContent = `
+  <img src="public/icons/{iconName}-light.svg" alt="{title} icon" />
+  <p>{title}</p>
+`;
+
 /**
  * Sets the toolbox contents with the specified technology list.
  * @param {string} option - The technology list to display.
@@ -35,12 +41,9 @@ function setup(option) {
   technologies[option].forEach((technology) => {
     const element = document.createElement("div");
     element.classList.add("toolbox__card");
-    element.innerHTML = `
-      <img src="public/icons/${technology.iconName}-light.svg" alt="${technology.title} icon" />
-      <div class="toolbox__card__text">
-        <h3>${technology.title}</h3>
-      </div>
-    `;
+    element.innerHTML = htmlContent
+      .replace("{iconName}", technology.iconName)
+      .replaceAll("{title}", technology.title);
     $("#toolbox-cards").append(element);
   });
 }

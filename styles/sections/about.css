@@ -133,17 +133,15 @@
     filter: var(--drop-shadow-card);
 }
 
-.toolbox__card img {
+.toolbox__card > img {
     width: 32px;
     height: 32px;
 }
 
-.toolbox__card__text {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
-.toolbox__card__text h3 {
+.toolbox__card > p {
     font-size: var(--font-text-size);
+    user-select: none;
+    cursor:
+        url("../../public/cursor/cursor.svg") 24 24,
+        auto;
 }

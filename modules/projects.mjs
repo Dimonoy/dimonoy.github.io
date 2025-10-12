@@ -1,26 +1,26 @@
 const projects = [
   {
-    imageUrl: "../public/images/portfolio-project.png",
-    title: "My Portfolio 1",
-    description: "Just a page for testing, I will remove it soon.",
+    imageUrl: "../public/images/placeholder-16-9.png",
+    title: "Project 1",
+    description: "Upcoming...",
     link: "http://localhost:8000/",
   },
   {
-    imageUrl: "../public/images/portfolio-project.png",
-    title: "My Portfolio 2",
-    description: "Just a page for testing, I will remove it soon.",
+    imageUrl: "../public/images/placeholder-16-9.png",
+    title: "Project 2",
+    description: "Upcoming...",
     link: "http://localhost:8000/",
   },
   {
-    imageUrl: "../public/images/portfolio-project.png",
-    title: "My Portfolio 3",
-    description: "Just a page for testing, I will remove it soon.",
+    imageUrl: "../public/images/placeholder-16-9.png",
+    title: "Project 3",
+    description: "Upcoming...",
     link: "http://localhost:8000/",
   },
   {
-    imageUrl: "../public/images/portfolio-project.png",
-    title: "My Portfolio 4",
-    description: "Just a page for testing, I will remove it soon.",
+    imageUrl: "../public/images/placeholder-16-9.png",
+    title: "Project 4",
+    description: "Upcoming...",
     link: "http://localhost:8000/",
   },
 ];
