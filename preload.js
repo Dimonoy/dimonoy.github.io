@@ -30,7 +30,11 @@ let projectIndex = 0;
 
 // Initialize technologies and projects
 {
-  setupTechnologies("web");
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    setupTechnologies("web", "-light");
+  } else {
+    setupTechnologies("web");
+  }
   projectIndex = setupProjects(projectIndex);
 }
 
@@ -40,6 +44,27 @@ $(document).on("click", "#slide-show__arrow-left", function () {
 
 $(document).on("click", "#slide-show__arrow-right", function () {
   projectIndex = setupProjects(projectIndex + 1);
+});
+
+// Toggle theme
+$(document).on("click", "#svg-lightbulb", function () {
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    $("body").toggleClass("light");
+
+    if ($("body").hasClass("light")) {
+      setupTechnologies("web");
+    } else {
+      setupTechnologies("web", "-light");
+    }
+  } else {
+    $("body").toggleClass("dark");
+
+    if ($("body").hasClass("dark")) {
+      setupTechnologies("web", "-light");
+    } else {
+      setupTechnologies("web");
+    }
+  }
 });
 
 /**

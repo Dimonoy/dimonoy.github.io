@@ -15,6 +15,16 @@
     user-select: none;
 }
 
+.projects__slide-show__arrow-left > svg,
+.projects__slide-show__arrow-right > svg {
+    transition: filter var(--lightup-transition);
+}
+
+.projects__slide-show__arrow-left > svg:hover,
+.projects__slide-show__arrow-right > svg:hover {
+    filter: var(--drop-shadow-link);
+}
+
 .projects__slides {
     display: flex;
     align-items: center;
@@ -90,6 +100,7 @@
     align-items: center;
     justify-content: center;
     color: var(--primary-background-color);
+    transition: filter var(--lightup-transition);
 }
 
 .projects__slide__info > a:hover {

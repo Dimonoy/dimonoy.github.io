@@ -62,7 +62,7 @@ portfolio/
 - [x] Move Toolbox section to About section
 - [x] Implement projects logic
 - [x] Deploy on GitHub Pages
-- [ ] Add light theme functionality
+- [x] Add light theme functionality
 - [ ] Add Korean language version
 - [ ] Add audio effects
 - [ ] Improve mobile responsiveness

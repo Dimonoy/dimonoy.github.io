@@ -4,19 +4,20 @@
 @import "footer.css";
 
 @import "sections/about.css";
-@import "sections/toolbox.css";
 @import "sections/projects.css";
 @import "sections/experience.css";
 
 @import "fonts.css";
 
 :root {
-    --primary-background-color: #222;
+    color-scheme: light dark;
+
+    --primary-background-color: light-dark(white, #222);
     --secondary-background-color: #333;
-    --primary-foreground-color: white;
-    --accent-theme-color: #ff0;
-    --accent-toggle-color: #77f;
-    --accent-link-color: #f8f;
+    --primary-foreground-color: light-dark(#333, white);
+    --accent-theme-color: light-dark(#aa0, #ff0);
+    --accent-toggle-color: light-dark(#22f, #77f);
+    --accent-link-color: light-dark(#a1a, #f8f);
 
     --drop-shadow-toggle: drop-shadow(0 0 8px var(--accent-toggle-color));
     --drop-shadow-theme: drop-shadow(0 0 8px var(--accent-theme-color))
@@ -146,4 +147,12 @@ footer {
 
 main {
     padding-top: calc(var(--gap) * 2 + 32px);
+}
+
+.light {
+    color-scheme: light;
+}
+
+.dark {
+    color-scheme: dark;
 }

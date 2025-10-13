@@ -14,7 +14,15 @@ $("#toolbox .menu__item").click((event) => {
 
   const option = event.target.parentNode.dataset.option;
 
-  setupTechnologies(option);
+  if (
+    ($("body").hasClass("dark") ||
+      window.matchMedia("(prefers-color-scheme: dark)").matches) &&
+    !$("body").hasClass("light")
+  ) {
+    setupTechnologies(option, "-light");
+  } else {
+    setupTechnologies(option);
+  }
 });
 
 function onScroll() {

@@ -27,22 +27,33 @@ const technologies = {
 
 // Labels: {iconName} {title}
 const htmlContent = `
-  <img src="public/icons/{iconName}-light.svg" alt="{title} icon" />
+  <img src="public/icons/{iconName}.svg" alt="{title} icon" />
   <p>{title}</p>
 `;
 
 /**
  * Sets the toolbox contents with the specified technology list.
  * @param {string} option - The technology list to display.
+ * @param {string?} suffix - Icon suffix for different icon variation.
  */
-function setup(option) {
+function setup(option, suffix) {
   $("#toolbox-cards").empty();
 
   technologies[option].forEach((technology) => {
     const element = document.createElement("div");
+    console.log(
+      suffix !== undefined
+        ? `${technology.iconName}${suffix}`
+        : technology.iconName,
+    );
     element.classList.add("toolbox__card");
     element.innerHTML = htmlContent
-      .replace("{iconName}", technology.iconName)
+      .replace(
+        "{iconName}",
+        suffix !== undefined
+          ? `${technology.iconName}${suffix}`
+          : technology.iconName,
+      )
       .replaceAll("{title}", technology.title);
     $("#toolbox-cards").append(element);
   });
