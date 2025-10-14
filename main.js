@@ -1,5 +1,10 @@
 import { setup as setupTechnologies } from "./modules/technologies.mjs";
-import { setup as setupProjects } from "./modules/projects.mjs";
+import { updateLocalTime } from "./modules/time.mjs";
+
+/* Run local-time clock */
+{
+  updateLocalTime();
+}
 
 /* Resets active styles for menu elements */
 $("#header .menu__item").click((event) => {

@@ -41,11 +41,6 @@ function setup(option, suffix) {
 
   technologies[option].forEach((technology) => {
     const element = document.createElement("div");
-    console.log(
-      suffix !== undefined
-        ? `${technology.iconName}${suffix}`
-        : technology.iconName,
-    );
     element.classList.add("toolbox__card");
     element.innerHTML = htmlContent
       .replace(

@@ -2,6 +2,7 @@ import { loadSvg } from "./modules/svg.mjs";
 import { setup as setupTechnologies } from "./modules/technologies.mjs";
 import { setup as setupProjects } from "./modules/projects.mjs";
 import hiddenElementsToShow from "./modules/target_animation_elements.mjs";
+import { setup as setupLanguage } from "./modules/transcripts.mjs";
 
 // Load SVG icons
 {
@@ -26,6 +27,11 @@ import hiddenElementsToShow from "./modules/target_animation_elements.mjs";
   );
 }
 
+// Set language
+{
+  $("html").get(0).lang = "en";
+}
+
 let projectIndex = 0;
 
 // Initialize technologies and projects
@@ -47,7 +53,7 @@ $(document).on("click", "#slide-show__arrow-right", function () {
 });
 
 // Toggle theme
-$(document).on("click", "#svg-lightbulb", function () {
+$(document).on("click", "#svg-lightbulb", () => {
   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     $("body").toggleClass("light");
 
@@ -65,6 +71,16 @@ $(document).on("click", "#svg-lightbulb", function () {
       setupTechnologies("web");
     }
   }
+});
+
+let language = null;
+$(document).on("click", "#svg-language", () => {
+  language = $("html").attr("lang");
+
+  language = language === "ko" ? "en" : "ko";
+  $("html").attr("lang", language);
+
+  setupLanguage(language);
 });
 
 /**
