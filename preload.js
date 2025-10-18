@@ -3,6 +3,8 @@ import { setup as setupTechnologies } from "./modules/technologies.mjs";
 import { setup as setupProjects } from "./modules/projects.mjs";
 import hiddenElementsToShow from "./modules/target_animation_elements.mjs";
 import { setup as setupLanguage } from "./modules/transcripts.mjs";
+import { playSound } from "./modules/audio.mjs";
+import { ClassWatcher } from "./modules/class_watcher.mjs";
 
 // Load SVG icons
 {
@@ -58,16 +60,20 @@ $(document).on("click", "#svg-lightbulb", () => {
     $("body").toggleClass("light");
 
     if ($("body").hasClass("light")) {
+      playSound("lamp_off");
       setupTechnologies("web");
     } else {
+      playSound("lamp_on");
       setupTechnologies("web", "-light");
     }
   } else {
     $("body").toggleClass("dark");
 
     if ($("body").hasClass("dark")) {
+      playSound("lamp_on");
       setupTechnologies("web", "-light");
     } else {
+      playSound("lamp_off");
       setupTechnologies("web");
     }
   }
@@ -100,6 +106,27 @@ function isChrome() {
     root.style.setProperty(
       "--drop-shadow-header",
       "drop-shadow(0 0 16px var(--primary-foreground-color))",
+    );
+  }
+}
+
+// Initialize observers to switch body background linear gradient filter on theme toggle
+{
+  if (isChrome()) {
+    const linearGradientLight = "linear-gradient(to left, #eee, #fff)";
+    const linearGradientDark = "linear-gradient(to left, #222, #333)";
+
+    new ClassWatcher(
+      $("body").get(0),
+      "light",
+      () => $("body").css("background-image", linearGradientLight),
+      () => $("body").css("background-image", linearGradientDark)
+    );
+    new ClassWatcher(
+      $("body").get(0),
+      "dark",
+      () => $("body").css("background-image", linearGradientDark),
+      () => $("body").css("background-image", linearGradientLight)
     );
   }
 }
