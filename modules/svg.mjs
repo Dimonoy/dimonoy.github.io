@@ -5,25 +5,25 @@
  * @param {string?} classes - The classes to apply to the SVG element.
  */
 function loadSvg(name, id, classes) {
-  const pathToSvg = `public/icons/${name}.svg`;
-  const svgElemId = `#${id}`;
+    const pathToSvg = `public/icons/${name}.svg`;
+    const svgElemId = `#${id}`;
 
-  fetch(pathToSvg)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+    fetch(pathToSvg)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
 
-      return response.text();
-    })
-    .then((svgText) =>
-      $(svgElemId).replaceWith(
-        `<span class="${classes}" id="${svgElemId.slice(1)}">${svgText}</span>`,
-      ),
-    )
-    .catch((error) => {
-      console.error(`Error loading SVG icon '${pathToSvg}':`, error.message);
-    });
+            return response.text();
+        })
+        .then((svgText) =>
+            $(svgElemId).replaceWith(
+                `<span class="${classes}" id="${svgElemId.slice(1)}">${svgText}</span>`,
+            ),
+        )
+        .catch((error) => {
+            console.error(`Error loading SVG icon '${pathToSvg}':`, error.message);
+        });
 }
 
 export { loadSvg };

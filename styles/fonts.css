@@ -1,16 +1,17 @@
 @font-face {
     font-family: "Gothic A1";
-    src: url("../public/fonts/Gothic_A1/GothicA1-Regular.ttf")
-        format("truetype");
+    src: url("../public/fonts/Gothic_A1/GothicA1-Regular.ttf") format("truetype");
     font-weight: 300;
     font-style: normal;
 }
+
 @font-face {
     font-family: "Gothic A1";
     src: url("../public/fonts/Gothic_A1/GothicA1-Bold.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
 }
+
 @font-face {
     font-family: "Gothic A1";
     src: url("../public/fonts/Gothic_A1/GothicA1-Black.ttf") format("truetype");
@@ -24,12 +25,14 @@
     font-weight: 100;
     font-style: normal;
 }
+
 @font-face {
     font-family: "Kanit";
     src: url("../public/fonts/Kanit/Kanit-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
 }
+
 @font-face {
     font-family: "Kanit";
     src: url("../public/fonts/Kanit/Kanit-SemiBold.ttf") format("truetype");

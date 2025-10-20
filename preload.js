@@ -120,13 +120,13 @@ function isChrome() {
       $("body").get(0),
       "light",
       () => $("body").css("background-image", linearGradientLight),
-      () => $("body").css("background-image", linearGradientDark)
+      () => $("body").css("background-image", linearGradientDark),
     );
     new ClassWatcher(
       $("body").get(0),
       "dark",
       () => $("body").css("background-image", linearGradientDark),
-      () => $("body").css("background-image", linearGradientLight)
+      () => $("body").css("background-image", linearGradientLight),
     );
   }
 }

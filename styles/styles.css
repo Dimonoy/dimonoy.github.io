@@ -12,37 +12,33 @@
 :root {
     color-scheme: light dark;
 
-    --primary-background-color: light-dark(white, #222);
-    --secondary-background-color: #333;
-    --primary-foreground-color: light-dark(#333, white);
-    --accent-theme-color: light-dark(#aa0, #ff0);
-    --accent-toggle-color: light-dark(#22f, #77f);
-    --accent-link-color: light-dark(#a1a, #f8f);
+    --color-primary-background: light-dark(white, #222);
+    --color-secondary-background: #333;
+    --color-primary-foreground: light-dark(#333, white);
+    --color-accent-theme: light-dark(#aa0, #ff0);
+    --color-accent-toggle: light-dark(#22f, #77f);
+    --color-accent-link: light-dark(#a1a, #f8f);
 
-    --drop-shadow-toggle: drop-shadow(0 0 8px var(--accent-toggle-color));
-    --drop-shadow-theme: drop-shadow(0 0 8px var(--accent-theme-color))
-        drop-shadow(0 0 12px var(--accent-theme-color))
-        drop-shadow(0 0 24px var(--accent-theme-color));
-    --drop-shadow-link: drop-shadow(0 0 8px var(--accent-link-color));
-    --drop-shadow-text: drop-shadow(0 0 6px var(--primary-foreground-color));
-    --drop-shadow-header: drop-shadow(0 0 1px var(--primary-foreground-color))
-        drop-shadow(0 0 8px var(--primary-foreground-color))
-        drop-shadow(0 0 16px var(--primary-foreground-color));
+    --drop-shadow-toggle: drop-shadow(0 0 8px var(--color-accent-toggle));
+    --drop-shadow-theme: drop-shadow(0 0 8px var(--color-accent-theme)) drop-shadow(0 0 12px var(--color-accent-theme)) drop-shadow(0 0 24px var(--color-accent-theme));
+    --drop-shadow-link: drop-shadow(0 0 8px var(--color-accent-link));
+    --drop-shadow-text: drop-shadow(0 0 6px var(--color-primary-foreground));
+    --drop-shadow-header: drop-shadow(0 0 1px var(--color-primary-foreground)) drop-shadow(0 0 8px var(--color-primary-foreground)) drop-shadow(0 0 16px var(--color-primary-foreground));
     --drop-shadow-card: var(--drop-shadow-text);
 
     --gap: 32px;
     --lightup-transition: 200ms ease-out;
 
-    --font-text-size: 16px;
-    --font-subheader-size: calc(var(--font-text-size) * 1.5);
-    --font-header-size: calc(var(--font-text-size) * 3);
+    --font-size-normal: 16px;
+    --font-size-medium: 1.5rem;
+    --font-size-large: 3rem;
     --font-weight-bold: 600;
     --font-weight-normal: 400;
     --font-weight-light: 100;
 }
 
 *::selection {
-    color: var(--secondary-background-color);
+    color: var(--color-secondary-background);
 }
 
 * {
@@ -52,15 +48,16 @@
 }
 
 html {
-    scroll-padding-top: calc(var(--gap) * 2 + 32px);
+    scroll-padding-top: calc(var(--gap) * 2 + 2rem);
+    font-size: var(--font-size-normal);
 }
 
 body {
     background-image: linear-gradient(to left, #222, #333);
-    color: var(--primary-foreground-color);
+    color: var(--color-primary-foreground);
     font-family: "Kanit", sans-serif;
     font-weight: var(--font-weight-normal);
-    font-size: var(--font-text-size);
+    font-size: var(--font-size-normal);
     cursor:
         url("../public/cursor/cursor.svg") 24 24,
         auto;
@@ -70,7 +67,7 @@ body {
 @-moz-document url-prefix() {
     body {
         background-image: none;
-        background-color: var(--primary-background-color);
+        background-color: var(--color-primary-background);
     }
 }
 
@@ -97,24 +94,24 @@ ul {
 
 a {
     text-decoration: none;
-    color: var(--primary-foreground-color);
+    color: var(--color-primary-foreground);
 }
 
 h1 {
-    font-size: var(--font-header-size);
+    font-size: var(--font-size-large);
     font-weight: var(--font-weight-bold);
     transform: translateZ(0);
 }
 
 h2 {
-    font-size: var(--font-subheader-size);
+    font-size: var(--font-size-medium);
     font-weight: var(--font-weight-bold);
 }
 
 h1,
 h2 {
-    -webkit-text-stroke: 1px var(--primary-foreground-color);
-    text-stroke: 1px var(--primary-foreground-color);
+    -webkit-text-stroke: 1px var(--color-primary-foreground);
+    text-stroke: 1px var(--color-primary-foreground);
     color: transparent;
     transition: filter var(--lightup-transition);
 }
@@ -126,27 +123,26 @@ h2:hover {
 
 p {
     transition: filter var(--lightup-transition);
+    font-size: var(--font-size-normal);
 }
 
 p:hover {
     filter: var(--drop-shadow-text);
 }
 
-section {
-    padding: var(--gap) 0;
-}
-
-header {
+header,
+footer {
     margin-inline: 20%;
 }
 
-section,
-footer {
-    padding-inline: 20% !important;
+main {
+    padding-inline: 20%;
 }
 
 main {
-    padding-top: calc(var(--gap) * 2 + 32px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
 }
 
 .light {

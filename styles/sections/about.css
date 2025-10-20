@@ -2,8 +2,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     gap: var(--gap);
+}
+
+@media screen and (max-width: 1000px) {
+    .about {
+        flex-direction: column;
+    }
 }
 
 .about__left-column {
@@ -18,7 +23,7 @@
     gap: calc(var(--gap) * 0.5);
 }
 
-.about__header > h1 {
+.about__header>h1 {
     animation: wavyGlowing 5s infinite linear;
 }
 
@@ -35,18 +40,18 @@
     gap: calc(var(--gap) * 0.125);
 }
 
-.about__fact > svg {
+.about__fact>svg {
     width: 16px;
     height: 16px;
 }
 
-.about__fact > svg > path {
-    fill: var(--primary-foreground-color);
+.about__fact>svg>path {
+    fill: var(--color-primary-foreground);
     opacity: 0.6;
 }
 
-.about__fact > p {
-    font-size: calc(var(--font-text-size) * 0.8);
+.about__fact>p {
+    font-size: calc(var(--font-size-normal) * 0.8);
     opacity: 0.6;
 }
 
@@ -59,8 +64,8 @@
 .about__actions button {
     width: 140px;
     height: 48px;
-    background-color: var(--accent-link-color);
-    color: var(--primary-background-color);
+    background-color: var(--color-accent-link);
+    color: var(--color-primary-background);
     border: 0;
     padding: 0;
     font-family: inherit;
@@ -82,7 +87,7 @@
 }
 
 .about__actions svg path {
-    fill: var(--accent-link-color);
+    fill: var(--color-accent-link);
 }
 
 .about__info-card {
@@ -97,7 +102,7 @@
 
 .about__info-card span,
 .about__info-card p {
-    color: var(--accent-primary-color);
+    color: var(--color-accent-primary);
 }
 
 /* --------- TOOLBOX --------- */
@@ -110,7 +115,7 @@
 }
 
 .toolbox__cards {
-    color: var(--primary-foreground-color);
+    color: var(--color-primary-foreground);
     user-select: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -134,13 +139,13 @@
     filter: var(--drop-shadow-card);
 }
 
-.toolbox__card > img {
+.toolbox__card>img {
     width: 32px;
     height: 32px;
 }
 
-.toolbox__card > p {
-    font-size: var(--font-text-size);
+.toolbox__card>p {
+    font-size: var(--font-size-normal);
     user-select: none;
     cursor:
         url("../../public/cursor/cursor.svg") 24 24,

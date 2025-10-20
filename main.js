@@ -38,12 +38,12 @@ function onScroll() {
     $("#header").get(0).classList.remove("header-background");
   }
 
-  const viewportMid = window.innerHeight / 2;
+  const viewportMid = (window.innerHeight / 2) * 1.8;
   const elements = document.querySelectorAll(".experience__indicator");
   const elementsMid = [];
   elements.forEach((element) => {
     const rect = element.getBoundingClientRect();
-    const mid = (rect.top + rect.height / 2) * 0.7;
+    const mid = rect.top + rect.height / 2;
     elementsMid.push(mid);
   });
 

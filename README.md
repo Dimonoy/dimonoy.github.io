@@ -64,7 +64,7 @@ portfolio/
 - [x] Deploy on GitHub Pages
 - [x] Add light theme functionality
 - [x] Add Korean language version
-- [ ] Add audio effects
+- [x] Add audio effects
 - [ ] Improve mobile responsiveness
 - [ ] Add more project showcase items
 

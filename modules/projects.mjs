@@ -1,28 +1,28 @@
 const projects = [
-  {
-    imageUrl: "../public/images/placeholder-16-9.png",
-    title: "Project 1",
-    description: "Upcoming...",
-    link: "http://localhost:8000/",
-  },
-  {
-    imageUrl: "../public/images/placeholder-16-9.png",
-    title: "Project 2",
-    description: "Upcoming...",
-    link: "http://localhost:8000/",
-  },
-  {
-    imageUrl: "../public/images/placeholder-16-9.png",
-    title: "Project 3",
-    description: "Upcoming...",
-    link: "http://localhost:8000/",
-  },
-  {
-    imageUrl: "../public/images/placeholder-16-9.png",
-    title: "Project 4",
-    description: "Upcoming...",
-    link: "http://localhost:8000/",
-  },
+    {
+        imageUrl: "../public/images/placeholder-16-9.png",
+        title: "Project 1",
+        description: "Upcoming...",
+        link: "http://localhost:8000/",
+    },
+    {
+        imageUrl: "../public/images/placeholder-16-9.png",
+        title: "Project 2",
+        description: "Upcoming...",
+        link: "http://localhost:8000/",
+    },
+    {
+        imageUrl: "../public/images/placeholder-16-9.png",
+        title: "Project 3",
+        description: "Upcoming...",
+        link: "http://localhost:8000/",
+    },
+    {
+        imageUrl: "../public/images/placeholder-16-9.png",
+        title: "Project 4",
+        description: "Upcoming...",
+        link: "http://localhost:8000/",
+    },
 ];
 
 // Labels: {imgUrl} {title} {description} {link} {index}
@@ -47,33 +47,33 @@ const htmlContent = `
  * @returns {number} - Correct index
  */
 function setup(index) {
-  index = index < 0 ? projects.length - 1 : index % projects.length;
-  const prevProjectIndex = index === 0 ? projects.length - 1 : index - 1;
-  const nextProjectIndex = index === projects.length - 1 ? 0 : index + 1;
+    index = index < 0 ? projects.length - 1 : index % projects.length;
+    const prevProjectIndex = index === 0 ? projects.length - 1 : index - 1;
+    const nextProjectIndex = index === projects.length - 1 ? 0 : index + 1;
 
-  $(".projects__slide:nth-child(2)").replaceWith(
-    htmlContent
-      .replace("{imgUrl}", projects[index].imageUrl)
-      .replaceAll("{title}", projects[index].title)
-      .replace("{description}", projects[index].description)
-      .replace("{link}", projects[index].link),
-  );
-  $(".projects__slide:first-child").replaceWith(
-    htmlContent
-      .replace("{imgUrl}", projects[prevProjectIndex].imageUrl)
-      .replaceAll("{title}", projects[prevProjectIndex].title)
-      .replace("{description}", projects[prevProjectIndex].description)
-      .replace("{link}", projects[prevProjectIndex].link),
-  );
-  $(".projects__slide:last-child").replaceWith(
-    htmlContent
-      .replace("{imgUrl}", projects[nextProjectIndex].imageUrl)
-      .replaceAll("{title}", projects[nextProjectIndex].title)
-      .replace("{description}", projects[nextProjectIndex].description)
-      .replace("{link}", projects[nextProjectIndex].link),
-  );
+    $(".projects__slide:nth-child(2)").replaceWith(
+        htmlContent
+            .replace("{imgUrl}", projects[index].imageUrl)
+            .replaceAll("{title}", projects[index].title)
+            .replace("{description}", projects[index].description)
+            .replace("{link}", projects[index].link),
+    );
+    $(".projects__slide:first-child").replaceWith(
+        htmlContent
+            .replace("{imgUrl}", projects[prevProjectIndex].imageUrl)
+            .replaceAll("{title}", projects[prevProjectIndex].title)
+            .replace("{description}", projects[prevProjectIndex].description)
+            .replace("{link}", projects[prevProjectIndex].link),
+    );
+    $(".projects__slide:last-child").replaceWith(
+        htmlContent
+            .replace("{imgUrl}", projects[nextProjectIndex].imageUrl)
+            .replaceAll("{title}", projects[nextProjectIndex].title)
+            .replace("{description}", projects[nextProjectIndex].description)
+            .replace("{link}", projects[nextProjectIndex].link),
+    );
 
-  return index;
+    return index;
 }
 
 export { setup };

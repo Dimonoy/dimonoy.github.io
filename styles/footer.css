@@ -10,12 +10,12 @@
     gap: 8px;
 }
 
-.footer__rights > p:first-child {
-    font-size: calc(var(--font-text-size) * 1.5);
+.footer__rights>p:first-child {
+    font-size: calc(var(--font-size-normal) * 1.5);
 }
 
-.footer__rights > p:last-child {
-    font-size: calc(var(--font-text-size) * 4);
+.footer__rights>p:last-child {
+    font-size: calc(var(--font-size-normal) * 4);
 }
 
 .footer__content {
@@ -24,8 +24,8 @@
     gap: 18px;
 }
 
-.footer__content > p {
-    font-size: calc(var(--font-text-size) * 1.5);
+.footer__content>p {
+    font-size: calc(var(--font-size-normal) * 1.5);
     text-align: right;
 }
 
@@ -45,5 +45,5 @@
 }
 
 .footer__icons svg path {
-    fill: var(--accent-link-color);
+    fill: var(--color-accent-link);
 }
