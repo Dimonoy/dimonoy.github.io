@@ -38,8 +38,9 @@ portfolio/
 │   ├── fonts/           # Custom fonts
 │   ├── cursor/          # Custom cursor assets
 │   └── logo-*.png       # Site logos
-└── extra/               # Third-party libraries
-    └── jquery-3.7.1.slim.min.js
+├── extra/               # Third-party libraries
+│   └── jquery-3.7.1.slim.min.js
+└── store/               # Files to share
 ```
 
 ## 🎯 Usage
