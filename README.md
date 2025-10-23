@@ -66,7 +66,10 @@ portfolio/
 - [x] Add light theme functionality
 - [x] Add Korean language version
 - [x] Add audio effects
-- [ ] Improve mobile responsiveness
+- [x] Improve mobile responsiveness
+- [ ] Fix theme coloring issue for default light colorscheme
+- [ ] Redesign navigation bars
+- [ ] Convert experience detail paragraphs to experience detail bullet points
 - [ ] Add more project showcase items
 
 ## 📞 Contact
