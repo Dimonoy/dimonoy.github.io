@@ -12,79 +12,86 @@
 :root {
     color-scheme: light dark;
 
-    --color-primary-background: light-dark(white, #222);
-    --color-secondary-background: #333;
-    --color-primary-foreground: light-dark(#333, white);
-    --color-accent-theme: light-dark(#aa0, #ff0);
-    --color-accent-toggle: light-dark(#22f, #77f);
-    --color-accent-link: light-dark(#a1a, #f8f);
+    --clr-primary-bg: light-dark(white, #222);
+    --clr-secondary-bg: #333;
+    --clr-primary-fg: light-dark(#333, white);
+    --clr-accent-theme: light-dark(#aa0, #ff0);
+    --clr-accent-toggle: light-dark(#22f, #77f);
+    --clr-accent-link: light-dark(#a1a, #f8f);
 
-    --drop-shadow-toggle: drop-shadow(0 0 8px var(--color-accent-toggle));
-    --drop-shadow-theme: drop-shadow(0 0 8px var(--color-accent-theme)) drop-shadow(0 0 12px var(--color-accent-theme)) drop-shadow(0 0 24px var(--color-accent-theme));
-    --drop-shadow-link: drop-shadow(0 0 8px var(--color-accent-link));
-    --drop-shadow-text: drop-shadow(0 0 6px var(--color-primary-foreground));
-    --drop-shadow-header: drop-shadow(0 0 1px var(--color-primary-foreground)) drop-shadow(0 0 8px var(--color-primary-foreground)) drop-shadow(0 0 16px var(--color-primary-foreground));
+    --drop-shadow-toggle: drop-shadow(0 0 8px var(--clr-accent-toggle));
+    --drop-shadow-theme: drop-shadow(0 0 8px var(--clr-accent-theme)) drop-shadow(0 0 12px var(--clr-accent-theme)) drop-shadow(0 0 24px var(--clr-accent-theme));
+    --drop-shadow-link: drop-shadow(0 0 8px var(--clr-accent-link));
+    --drop-shadow-text: drop-shadow(0 0 6px var(--clr-primary-fg));
+    --drop-shadow-header: drop-shadow(0 0 1px var(--clr-primary-fg)) drop-shadow(0 0 8px var(--clr-primary-fg)) drop-shadow(0 0 16px var(--clr-primary-fg));
     --drop-shadow-card: var(--drop-shadow-text);
 
-    --gap: 32px;
     --lightup-transition: 200ms ease-out;
 
-    --font-size-normal: 16px;
-    --font-size-medium: 1.5rem;
-    --font-size-large: 3rem;
-    --font-weight-bold: 600;
-    --font-weight-normal: 400;
-    --font-weight-light: 100;
+    --gap: 32px;
+
+    --ff-primary: "Kanit", sans-serif;
+    --ff-primary-ko: "Gothic A1", sans-serif;
+
+    --fs-normal: 16px;
+    --fs-medium: 1.5rem;
+    --fs-large: 3rem;
+
+    --fw-bold: 600;
+    --fw-normal: 400;
+    --fw-light: 100;
 }
 
 *::selection {
-    color: var(--color-secondary-background);
+    color: var(--clr-secondary-bg);
 }
 
-* {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
     margin: 0;
     padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
 }
 
 html {
     scroll-padding-top: calc(var(--gap) * 2 + 2rem);
-    font-size: var(--font-size-normal);
+    font-size: var(--fs-normal);
+    box-sizing: border-box;
+}
+
+html:lang(en) {
+    font-family: var(--ff-primary);
+    --fw-light: 100;
+    --fw-bold: 600;
+}
+
+html:lang(ko) {
+    font-family: var(--ff-primary-ko);
+    --fw-light: 300;
+    --fw-bold: 700;
 }
 
 body {
     background-image: linear-gradient(to left, #222, #333);
-    color: var(--color-primary-foreground);
-    font-family: "Kanit", sans-serif;
-    font-weight: var(--font-weight-normal);
-    font-size: var(--font-size-normal);
-    cursor:
-        url("../public/cursor/cursor.svg") 24 24,
-        auto;
+    color: var(--clr-primary-fg);
+    font-weight: var(--fw-normal);
+    font-size: var(--fs-normal);
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--gap) * 4);
+    min-width: 320px;
 }
 
 /* Mozilla browsers do not apply smoothing on linear gradient, hence, using a solid color */
 @-moz-document url-prefix() {
     body {
         background-image: none;
-        background-color: var(--color-primary-background);
+        background-color: var(--clr-primary-bg);
     }
-}
-
-button,
-a,
-span {
-    cursor:
-        url("../public/cursor/pointer.svg") 24 24,
-        auto;
-}
-
-h1,
-h2,
-p {
-    cursor:
-        url("../public/cursor/select.svg") 24 24,
-        auto;
 }
 
 ul {
@@ -94,24 +101,24 @@ ul {
 
 a {
     text-decoration: none;
-    color: var(--color-primary-foreground);
+    color: var(--clr-primary-fg);
 }
 
 h1 {
-    font-size: var(--font-size-large);
-    font-weight: var(--font-weight-bold);
+    font-size: var(--fs-large);
+    font-weight: var(--fw-bold);
     transform: translateZ(0);
 }
 
 h2 {
-    font-size: var(--font-size-medium);
-    font-weight: var(--font-weight-bold);
+    font-size: var(--fs-medium);
+    font-weight: var(--fw-bold);
 }
 
 h1,
 h2 {
-    -webkit-text-stroke: 1px var(--color-primary-foreground);
-    text-stroke: 1px var(--color-primary-foreground);
+    -webkit-text-stroke: 1px var(--clr-primary-fg);
+    text-stroke: 1px var(--clr-primary-fg);
     color: transparent;
     transition: filter var(--lightup-transition);
 }
@@ -123,26 +130,32 @@ h2:hover {
 
 p {
     transition: filter var(--lightup-transition);
-    font-size: var(--font-size-normal);
+    font-size: var(--fs-normal);
 }
 
 p:hover {
     filter: var(--drop-shadow-text);
 }
 
-header,
-footer {
-    margin-inline: 20%;
-}
-
-main {
-    padding-inline: 20%;
-}
-
 main {
     display: flex;
     flex-direction: column;
-    gap: var(--gap);
+    gap: calc(var(--gap) * 4);
+}
+
+button {
+    width: 140px;
+    height: 48px;
+}
+
+svg {
+    width: 32px;
+    height: 32px;
+}
+
+.container {
+    margin-inline: auto;
+    width: min(64em, 100% - var(--gap));
 }
 
 .light {
@@ -151,4 +164,33 @@ main {
 
 .dark {
     color-scheme: dark;
+}
+
+@media screen and (max-width: 86em) {
+    :root {
+        --fs-normal: 10px;
+        --gap: 24px;
+    }
+
+    html {
+        scroll-padding-top: calc(var(--gap) * 6);
+    }
+
+    body {
+        gap: calc(var(--gap) * 2);
+    }
+
+    main {
+        gap: calc(var(--gap) * 2);
+    }
+
+    button {
+        width: 100px;
+        height: 32px;
+    }
+
+    svg {
+        width: 24px;
+        height: 24px;
+    }
 }

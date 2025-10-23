@@ -26,7 +26,7 @@ const projects = [
 ];
 
 // Labels: {imgUrl} {title} {description} {link} {index}
-const htmlContent = `
+const htmlContentTemplate = `
   <div class="projects__slide">
     <div class="projects__slide__content">
       <img src="{imgUrl}" alt="{title}" />
@@ -41,39 +41,54 @@ const htmlContent = `
   </div>
 `;
 
+const projectIndicatorTemplate = `
+  <div class="projects__indicator"></div>
+`;
+
+/**
+ * Changes the project to display.
+ * @param {number} page - Page number.
+ */
+function updateActiveElements(page) {
+    $(".projects__slide").removeClass("projects__slide--active");
+    $(".projects__indicator").removeClass("projects__indicator--active");
+    $(`.projects__slide:nth-child(${page})`).addClass("projects__slide--active");
+    $(`.projects__indicator:nth-child(${page})`).addClass("projects__indicator--active");
+}
+
 /**
  * Sets project slides content.
  * @param {number} index - The index of the selected project.
  * @returns {number} - Correct index
  */
-function setup(index) {
-    index = index < 0 ? projects.length - 1 : index % projects.length;
-    const prevProjectIndex = index === 0 ? projects.length - 1 : index - 1;
-    const nextProjectIndex = index === projects.length - 1 ? 0 : index + 1;
+function setup() {
+    projects.forEach((project, index) => {
+        const htmlContent = htmlContentTemplate
+            .replace("{imgUrl}", project.imageUrl)
+            .replaceAll("{title}", project.title)
+            .replace("{description}", project.description)
+            .replace("{link}", project.link);
 
-    $(".projects__slide:nth-child(2)").replaceWith(
-        htmlContent
-            .replace("{imgUrl}", projects[index].imageUrl)
-            .replaceAll("{title}", projects[index].title)
-            .replace("{description}", projects[index].description)
-            .replace("{link}", projects[index].link),
-    );
-    $(".projects__slide:first-child").replaceWith(
-        htmlContent
-            .replace("{imgUrl}", projects[prevProjectIndex].imageUrl)
-            .replaceAll("{title}", projects[prevProjectIndex].title)
-            .replace("{description}", projects[prevProjectIndex].description)
-            .replace("{link}", projects[prevProjectIndex].link),
-    );
-    $(".projects__slide:last-child").replaceWith(
-        htmlContent
-            .replace("{imgUrl}", projects[nextProjectIndex].imageUrl)
-            .replaceAll("{title}", projects[nextProjectIndex].title)
-            .replace("{description}", projects[nextProjectIndex].description)
-            .replace("{link}", projects[nextProjectIndex].link),
-    );
+        $(".projects__slide-show").append(htmlContent);
+        $(".projects__indicators").append(projectIndicatorTemplate);
 
-    return index;
+        $(".projects__indicator:last-child").click(() => {
+            updateActiveElements(index + 1);
+        });
+
+        $(".projects__slide:last-child").click(event => {
+            const boundary = window.innerWidth / 2;
+
+            if (event.clientX >= boundary && projects.length - 1 !== index) {
+                updateActiveElements(index + 2);
+            } else if (event.clientX < boundary && index !== 0) {
+                updateActiveElements(index);
+            }
+        });
+    });
+
+    $(".projects__slide:first-child").addClass("projects__slide--active");
+    $(".projects__indicator:first-child").addClass("projects__indicator--active");
 }
 
 export { setup };

@@ -2,7 +2,7 @@ const ENGLISH_FONT_FAMILY = "Kanit";
 const KOREAN_FONT_FAMILY = "Gothic A1";
 
 const ENGLISH_TRANSCRIPT = new Map([
-    [".header > .menu a", ["About", "Projects", "Experience"]],
+    [".main-header > .menu a", ["About", "Projects", "Experience"]],
     [
         ".about__header > h1",
         "I’ll create reliable systems to empower your business",
@@ -20,7 +20,7 @@ const ENGLISH_TRANSCRIPT = new Map([
         ".about__left-column > p",
         "I’m Cho Hyunwoo, an undergraduate Hanyang University student.<br /><br />I deliver scalable and performant software and data-driven solutions using proven web technologies and modern data science tools.",
     ],
-    [".about__actions > button", "Download CV"],
+    [".about__actions > button > a", "Download CV"],
     [".toolbox__header > .menu a", ["Web", "Data"]],
     [".projects > h1", "Projects"],
     [".experience > h1", "Experience"],
@@ -54,7 +54,7 @@ const ENGLISH_TRANSCRIPT = new Map([
 ]);
 
 const KOREAN_TRANSCRIPT = new Map([
-    [".header > .menu a", ["소개", "프로젝트", "경력"]],
+    [".main-header > .menu a", ["소개", "프로젝트", "경력"]],
     [
         ".about__header > h1",
         "신뢰할 수 있는 시스템을 구축하여 귀사의 비즈니스를 지원합니다",
@@ -64,7 +64,7 @@ const KOREAN_TRANSCRIPT = new Map([
         ".about__left-column > p",
         "저는 조현우입니다. 한양대학교 학부생입니다.<br /><br />검증된 웹 기술과 최신 데이터 과학 도구를 활용하여 확장 가능하고 성능이 우수한 소프트웨어 및 데이터 기반 솔루션을 제공합니다.",
     ],
-    [".about__actions > button", "이력서 다운로드"],
+    [".about__actions > button > a", "이력서 다운로드"],
     [".toolbox__header > .menu a", ["웹", "데이터"]],
     [".projects > h1", "프로젝트"],
     [".experience > h1", "경력"],
@@ -102,20 +102,13 @@ const KOREAN_TRANSCRIPT = new Map([
  * @param {string} language - The language code to set up.
  */
 function setup(language) {
-    let transcript = null;
-    let fontFamily = null;
-
-    if (language === "en") {
-        transcript = ENGLISH_TRANSCRIPT;
-        fontFamily = ENGLISH_FONT_FAMILY;
-    } else if (language === "ko") {
-        transcript = KOREAN_TRANSCRIPT;
-        fontFamily = KOREAN_FONT_FAMILY;
-    } else {
+    if (["en", "ko"].find(lang => lang === language) === undefined) {
         throw Error(
             `Invalid language code: ${language}. Choose among 'en' or 'ko'.`,
         );
     }
+
+    let transcript = language === "en" ? ENGLISH_TRANSCRIPT : KOREAN_TRANSCRIPT;
 
     for (let [selector, paragraph] of transcript) {
         if (paragraph instanceof Array) {
@@ -132,8 +125,6 @@ function setup(language) {
             );
         }
     }
-
-    document.body.style.fontFamily = `${fontFamily}, sans-serif`;
 }
 
 export {

@@ -8,152 +8,132 @@ import { ClassWatcher } from "./modules/class_watcher.mjs";
 
 // Load SVG icons
 {
-  loadSvg("Lightbulb", "svg-lightbulb");
-  loadSvg("Language", "svg-language");
-  loadSvg("Github", "svg-github");
-  loadSvg("LinkedIn", "svg-linkedin");
-  loadSvg("Gmail", "svg-email");
-  loadSvg("VK", "svg-vk");
-  loadSvg("LinkedIn-inverse", "svg-linkedin-2");
-  loadSvg("Telegram", "svg-telegram");
-
-  loadSvg(
-    "Arrow-left",
-    "slide-show__arrow-left",
-    "projects__slide-show__arrow-left",
-  );
-  loadSvg(
-    "Arrow-right",
-    "slide-show__arrow-right",
-    "projects__slide-show__arrow-right",
-  );
+    loadSvg("Lightbulb", "svg-lightbulb");
+    loadSvg("Language", "svg-language");
+    loadSvg("Github", "svg-github");
+    loadSvg("LinkedIn", "svg-linkedin");
+    loadSvg("Gmail", "svg-email");
+    loadSvg("VK", "svg-vk");
+    loadSvg("LinkedIn-inverse", "svg-linkedin-2");
+    loadSvg("Telegram", "svg-telegram");
 }
 
 // Set language
 {
-  $("html").get(0).lang = "en";
+    $("html").get(0).lang = "en";
 }
-
-let projectIndex = 0;
 
 // Initialize technologies and projects
 {
-  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    setupTechnologies("web", "-light");
-  } else {
-    setupTechnologies("web");
-  }
-  projectIndex = setupProjects(projectIndex);
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        setupTechnologies("web", "-light");
+    } else {
+        setupTechnologies("web");
+    }
+
+    setupProjects();
 }
-
-$(document).on("click", "#slide-show__arrow-left", function () {
-  projectIndex = setupProjects(projectIndex - 1);
-});
-
-$(document).on("click", "#slide-show__arrow-right", function () {
-  projectIndex = setupProjects(projectIndex + 1);
-});
 
 // Toggle theme
 $(document).on("click", "#svg-lightbulb", () => {
-  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    $("body").toggleClass("light");
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        $("body").toggleClass("light");
 
-    if ($("body").hasClass("light")) {
-      playSound("lamp_off");
-      setupTechnologies("web");
+        if ($("body").hasClass("light")) {
+            playSound("lamp_off");
+            setupTechnologies("web");
+        } else {
+            playSound("lamp_on");
+            setupTechnologies("web", "-light");
+        }
     } else {
-      playSound("lamp_on");
-      setupTechnologies("web", "-light");
-    }
-  } else {
-    $("body").toggleClass("dark");
+        $("body").toggleClass("dark");
 
-    if ($("body").hasClass("dark")) {
-      playSound("lamp_on");
-      setupTechnologies("web", "-light");
-    } else {
-      playSound("lamp_off");
-      setupTechnologies("web");
+        if ($("body").hasClass("dark")) {
+            playSound("lamp_on");
+            setupTechnologies("web", "-light");
+        } else {
+            playSound("lamp_off");
+            setupTechnologies("web");
+        }
     }
-  }
 });
 
 let language = null;
 $(document).on("click", "#svg-language", () => {
-  language = $("html").attr("lang");
+    language = $("html").attr("lang");
 
-  language = language === "ko" ? "en" : "ko";
-  $("html").attr("lang", language);
+    language = language === "ko" ? "en" : "ko";
+    $("html").attr("lang", language);
 
-  setupLanguage(language);
+    setupLanguage(language);
 });
 
 /**
- * Check if the browser is Chrome
- * @returns {boolean} - True if the browser is Chrome, false otherwise
- */
-function isChrome() {
-  const ua = navigator.userAgent.toLowerCase();
-  return ua.includes("chrome") && !ua.includes("edg") && !ua.includes("opr");
-}
+    * Check if the browser is Chrome
+    * @returns {boolean} - True if the browser is Chrome, false otherwise
+    */
+    function isChrome() {
+        const ua = navigator.userAgent.toLowerCase();
+        return ua.includes("chrome") && !ua.includes("edg") && !ua.includes("opr");
+    }
 
 // Redefine :root properties based on browser
 {
-  if (isChrome()) {
-    const root = document.documentElement;
+    if (isChrome()) {
+        const root = document.documentElement;
 
-    root.style.setProperty(
-      "--drop-shadow-header",
-      "drop-shadow(0 0 16px var(--primary-foreground-color))",
-    );
-  }
+        root.style.setProperty(
+            "--drop-shadow-header",
+            "drop-shadow(0 0 16px var(--primary-foreground-color))",
+        );
+    }
 }
 
 // Initialize observers to switch body background linear gradient filter on theme toggle
 {
-  if (isChrome()) {
-    const linearGradientLight = "linear-gradient(to left, #eee, #fff)";
-    const linearGradientDark = "linear-gradient(to left, #222, #333)";
+    if (isChrome()) {
+        const linearGradientLight = "linear-gradient(to left, #eee, #fff)";
+        const linearGradientDark = "linear-gradient(to left, #222, #333)";
 
-    new ClassWatcher(
-      $("body").get(0),
-      "light",
-      () => $("body").css("background-image", linearGradientLight),
-      () => $("body").css("background-image", linearGradientDark),
-    );
-    new ClassWatcher(
-      $("body").get(0),
-      "dark",
-      () => $("body").css("background-image", linearGradientDark),
-      () => $("body").css("background-image", linearGradientLight),
-    );
-  }
+        new ClassWatcher(
+            $("body").get(0),
+            "light",
+            () => $("body").css("background-image", linearGradientLight),
+            () => $("body").css("background-image", linearGradientDark),
+        );
+        new ClassWatcher(
+            $("body").get(0),
+            "dark",
+            () => $("body").css("background-image", linearGradientDark),
+            () => $("body").css("background-image", linearGradientLight),
+        );
+    }
 }
 
 const wasStartupAnimationPlayed = sessionStorage.getItem(
-  "was-startup-animation-played",
+    "was-startup-animation-played",
 );
 
 if (wasStartupAnimationPlayed === null) {
-  hiddenElementsToShow.forEach((element) => element.classList.add("hidden"));
+    hiddenElementsToShow.forEach((element) => element.classList.add("hidden"));
 
-  const initialTimeoutMS = 500;
-  const defaultTimeoutMSIncrement = 300;
+    const initialTimeoutMS = 500;
+    const defaultTimeoutMSIncrement = 300;
 
-  let currentTimeoutMS = initialTimeoutMS;
-  let timeoutMSIncrements = Array(hiddenElementsToShow.length - 1).fill(
-    defaultTimeoutMSIncrement,
-  );
-  timeoutMSIncrements[0] = 500;
+    let currentTimeoutMS = initialTimeoutMS;
+    let timeoutMSIncrements = Array(hiddenElementsToShow.length - 1).fill(
+        defaultTimeoutMSIncrement,
+    );
+    timeoutMSIncrements[0] = 500;
 
-  hiddenElementsToShow.forEach((element, i) => {
-    setTimeout(() => {
-      element.classList.add("shown");
-    }, currentTimeoutMS);
+    hiddenElementsToShow.forEach((element, i) => {
+        setTimeout(() => {
+            element.classList.add("shown");
+        }, currentTimeoutMS);
 
-    currentTimeoutMS += timeoutMSIncrements[i];
-  });
+        currentTimeoutMS += timeoutMSIncrements[i];
+    });
 
-  sessionStorage.setItem("was-startup-animation-played", true);
+    sessionStorage.setItem("was-startup-animation-played", true);
 }

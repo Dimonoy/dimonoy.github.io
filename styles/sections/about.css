@@ -5,12 +5,6 @@
     gap: var(--gap);
 }
 
-@media screen and (max-width: 1000px) {
-    .about {
-        flex-direction: column;
-    }
-}
-
 .about__left-column {
     display: flex;
     flex-direction: column;
@@ -46,12 +40,12 @@
 }
 
 .about__fact>svg>path {
-    fill: var(--color-primary-foreground);
+    fill: var(--clr-primary-fg);
     opacity: 0.6;
 }
 
 .about__fact>p {
-    font-size: calc(var(--font-size-normal) * 0.8);
+    font-size: calc(var(--fs-normal) * 0.8);
     opacity: 0.6;
 }
 
@@ -62,20 +56,21 @@
 }
 
 .about__actions button {
-    width: 140px;
-    height: 48px;
-    background-color: var(--color-accent-link);
-    color: var(--color-primary-background);
+    background-color: var(--clr-accent-link);
     border: 0;
     padding: 0;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
     transition: filter var(--lightup-transition);
 }
 
 .about__actions button:hover {
     filter: var(--drop-shadow-link);
+}
+
+.about__actions a {
+    display: block;
+    align-content: center;
+    height: 100%;
+    color: var(--clr-primary-bg);
 }
 
 .about__actions svg {
@@ -87,7 +82,7 @@
 }
 
 .about__actions svg path {
-    fill: var(--color-accent-link);
+    fill: var(--clr-accent-link);
 }
 
 .about__info-card {
@@ -102,7 +97,7 @@
 
 .about__info-card span,
 .about__info-card p {
-    color: var(--color-accent-primary);
+    color: var(--clr-accent-theme);
 }
 
 /* --------- TOOLBOX --------- */
@@ -114,8 +109,12 @@
     margin-inline: 0;
 }
 
+.toolbox__header a {
+    cursor: pointer;
+}
+
 .toolbox__cards {
-    color: var(--color-primary-foreground);
+    color: var(--clr-primary-fg);
     user-select: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -145,9 +144,33 @@
 }
 
 .toolbox__card>p {
-    font-size: var(--font-size-normal);
+    font-size: var(--fs-normal);
     user-select: none;
-    cursor:
-        url("../../public/cursor/cursor.svg") 24 24,
-        auto;
+    cursor: normal;
+}
+
+@media screen and (max-width: 86em) {
+    .about {
+        flex-direction: column;
+    }
+
+    .about__left-column {
+        align-items: center;
+    }
+
+    .about__left-column>p {
+        text-align: center;
+    }
+
+    .about__header {
+        align-items: center;
+    }
+
+    .about__header>h1 {
+        text-align: center;
+    }
+
+    .about__facts {
+        gap: calc(var(--gap) * 0.25);
+    }
 }
