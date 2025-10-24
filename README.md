@@ -4,7 +4,7 @@ A portfolio website showcasing my expertise, projects, and experience as a softw
 
 ## 🚀 Live Demo
 
-Visit the live portfolio at: [Your Portfolio URL]
+Visit the live portfolio at: https://dimonoy.github.io/
 
 ## 🛠️ Technologies Used
 
@@ -21,10 +21,6 @@ portfolio/
 ├── main.js                 # Main JavaScript entry point
 ├── preload.js             # Preload scripts
 ├── modules/               # JavaScript modules
-│   ├── technologies.mjs   # Technology showcase logic
-│   ├── projects.mjs       # Project slideshow logic
-│   ├── svg.mjs           # SVG icon management
-│   └── target_animation_elements.mjs
 ├── styles/               # CSS stylesheets
 │   ├── styles.css        # Main stylesheet
 │   ├── header.css        # Header styles
@@ -36,10 +32,8 @@ portfolio/
 │   ├── icons/           # Technology and social media icons
 │   ├── images/          # Project screenshots and images
 │   ├── fonts/           # Custom fonts
-│   ├── cursor/          # Custom cursor assets
 │   └── logo-*.png       # Site logos
 ├── extra/               # Third-party libraries
-│   └── jquery-3.7.1.slim.min.js
 └── store/               # Files to share
 ```
 
@@ -52,9 +46,9 @@ portfolio/
 
 ### Interactive Features
 - **Technology Toggle**: Switch between Web and Data Science stacks
-- **Theme Toggle**: Click the lightbulb icon (coming soon)
-- **Language Toggle**: Switch between Korean and English (coming soon)
-- **Project Slideshow**: Use arrow keys to browse projects
+- **Theme Toggle**: Click the lightbulb icon
+- **Language Toggle**: Switch between Korean and English
+- **Project Slideshow**: Click on circles or left/right side of images
 - **Timeline Scroll Animations**: Experience timeline activates on scroll
 - **Interative sounds**: Certain events trigger sound effects (coming soon)
 
@@ -67,9 +61,10 @@ portfolio/
 - [x] Add Korean language version
 - [x] Add audio effects
 - [x] Improve mobile responsiveness
-- [ ] Fix theme coloring issue for default light colorscheme
-- [ ] Redesign navigation bars
-- [ ] Convert experience detail paragraphs to experience detail bullet points
+- [x] Fix theme coloring issue for default light colorscheme
+- [x] Redesign navigation bars
+- [x] Convert experience detail paragraphs to experience detail bullet points
+- [ ] Add improvements to transcripts
 - [ ] Add more project showcase items
 
 ## 📞 Contact
