@@ -50,7 +50,7 @@ portfolio/
 - **Language Toggle**: Switch between Korean and English
 - **Project Slideshow**: Click on circles or left/right side of images
 - **Timeline Scroll Animations**: Experience timeline activates on scroll
-- **Interative sounds**: Certain events trigger sound effects (coming soon)
+- **Interative sounds**: Certain events trigger sound effects
 
 ## 🔮 Roadmap
 
@@ -64,6 +64,7 @@ portfolio/
 - [x] Fix theme coloring issue for default light colorscheme
 - [x] Redesign navigation bars
 - [x] Convert experience detail paragraphs to experience detail bullet points
+- [ ] Reorganize javascript
 - [ ] Add improvements to transcripts
 - [ ] Add more project showcase items
 
