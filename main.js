@@ -10,27 +10,27 @@ import { updateLocalTime } from "./modules/time.mjs";
 }
 
 /* Resets active styles for menu elements */
-$("#header .menu__item").click((event) => {
-    $("#header .menu__item").removeClass("menu__item--active");
+$(".main-header .menu__item").click((event) => {
+    $(".main-header .menu__item").removeClass("menu__item--active");
     event.target.parentNode.classList.add("menu__item--active");
 });
 
 /* Toggles between different technology categories */
 $("#toolbox .menu__item").click((event) => {
-$("#toolbox .menu__item").removeClass("menu__item--active");
-event.target.parentNode.classList.add("menu__item--active");
+    $("#toolbox .menu__item").removeClass("menu__item--active");
+    event.target.parentNode.classList.add("menu__item--active");
 
-const option = event.target.parentNode.dataset.option;
+    const option = event.target.parentNode.dataset.option;
 
-if (
-    ($("body").hasClass("dark") ||
-        window.matchMedia("(prefers-color-scheme: dark)").matches) &&
-    !$("body").hasClass("light")
-) {
-    setupTechnologies(option, "-light");
-} else {
-    setupTechnologies(option);
-}
+    if (
+        ($("body").hasClass("dark") ||
+            window.matchMedia("(prefers-color-scheme: dark)").matches) &&
+        !$("body").hasClass("light")
+    ) {
+        setupTechnologies(option, "-light");
+    } else {
+        setupTechnologies(option);
+    }
 });
 
 function onScroll() {

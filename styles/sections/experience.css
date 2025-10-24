@@ -18,7 +18,7 @@
     justify-self: center;
     width: 36px;
     height: 36px;
-    border: 4px solid light-dark(rgba(51, 51, 51, 0.6), rgba(255, 255, 255, 0.6));
+    border: 4px solid var(--clr-primary-bg-contrast-faint-reverse);
     background-color: transparent;
     border-radius: 100%;
 }
@@ -41,6 +41,10 @@
 
 .experience__title>p {
     opacity: 0.6;
+}
+
+.experience__section>ul>li {
+    list-style: circle;
 }
 
 @media screen and (max-width: 86em) {
