@@ -12,8 +12,7 @@
 }
 
 .main-header-background {
-    background-color: light-dark(rgba(255, 255, 255, 0.6),
-            rgba(51, 51, 51, 0.6));
+    background-color: var(--clr-primary-bg-contrast-faint);
     backdrop-filter: blur(30px);
 }
 
@@ -48,8 +47,7 @@
     right: 0;
     width: 100%;
     height: calc(var(--gap) * 6);
-    background-color: light-dark(rgba(255, 255, 255, 0.6),
-            rgba(51, 51, 51, 0.6));
+    background-color: var(--clr-primary-bg-contrast-faint);
     backdrop-filter: blur(30px);
     padding: var(--gap) 0;
 
@@ -103,7 +101,10 @@
 .menu>ul {
     display: flex;
     align-items: center;
-    gap: var(--gap);
+}
+
+.menu__item {
+    border-bottom: 1px solid var(--clr-accent-toggle-faint);
 }
 
 .menu__item>a {
@@ -115,26 +116,17 @@
     height: 32px;
     user-select: none;
     color: var(--clr-accent-toggle);
-    position: relative;
 }
 
-.menu__item>a::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    transform: translateY(calc(var(--fs-normal) * 0.5 - 0.5px));
-    width: 0px;
-    height: 1px;
-    background-color: var(--clr-accent-toggle);
-    transition: 300ms;
+.menu__item>a:hover {
+    filter: var(--drop-shadow-toggle);
 }
 
-.menu__item>a:hover::after {
-    width: 100%;
+.menu__item--active {
+    border-bottom: 1px solid var(--clr-accent-toggle);
 }
 
 .menu__item--active>a {
-    text-decoration: underline;
     filter: var(--drop-shadow-toggle);
 }
 

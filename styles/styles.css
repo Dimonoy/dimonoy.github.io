@@ -12,12 +12,16 @@
 :root {
     color-scheme: light dark;
 
-    --clr-primary-bg: light-dark(white, #222);
-    --clr-secondary-bg: #333;
-    --clr-primary-fg: light-dark(#333, white);
-    --clr-accent-theme: light-dark(#aa0, #ff0);
-    --clr-accent-toggle: light-dark(#22f, #77f);
-    --clr-accent-link: light-dark(#a1a, #f8f);
+    --clr-primary-bg: light-dark(rgba(255, 255, 255, 1), rgba(34, 34, 34, 1));
+    --clr-primary-bg-faint: light-dark(rgba(255, 255, 255, 0.6), rgba(34, 34, 34, 0.6));
+    --clr-primary-bg-contrast-faint: light-dark(rgba(255, 255, 255, 0.6), rgba(51, 51, 51, 0.6));
+    --clr-primary-bg-contrast-faint-reverse: light-dark(rgba(51, 51, 51, 0.6), rgba(255, 255, 255, 0.6));
+    --clr-secondary-bg: rgba(51, 51, 51, 1);
+    --clr-primary-fg: light-dark(var(--clr-secondary-bg), rgba(255, 255, 255, 1));
+    --clr-accent-theme: light-dark(rgba(170, 170, 0, 1), rgba(255, 255, 0, 1));
+    --clr-accent-toggle: light-dark(rgba(34, 34, 255, 1), rgba(119, 119, 255, 1));
+    --clr-accent-toggle-faint: light-dark(rgba(34, 34, 255, 0.6), rgba(119, 119, 255, 0.6));
+    --clr-accent-link: light-dark(rgba(170, 17, 170, 1), rgba(255, 136, 255, 1));
 
     --drop-shadow-toggle: drop-shadow(0 0 8px var(--clr-accent-toggle));
     --drop-shadow-theme: drop-shadow(0 0 8px var(--clr-accent-theme)) drop-shadow(0 0 12px var(--clr-accent-theme)) drop-shadow(0 0 24px var(--clr-accent-theme));
@@ -76,7 +80,7 @@ html:lang(ko) {
 }
 
 body {
-    background-image: linear-gradient(to left, #222, #333);
+    background-color: var(--clr-primary-bg);
     color: var(--clr-primary-fg);
     font-weight: var(--fw-normal);
     font-size: var(--fs-normal);
@@ -84,14 +88,6 @@ body {
     flex-direction: column;
     gap: calc(var(--gap) * 4);
     min-width: 320px;
-}
-
-/* Mozilla browsers do not apply smoothing on linear gradient, hence, using a solid color */
-@-moz-document url-prefix() {
-    body {
-        background-image: none;
-        background-color: var(--clr-primary-bg);
-    }
 }
 
 ul {
