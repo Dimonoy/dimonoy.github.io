@@ -43,13 +43,32 @@ const ENGLISH_TRANSCRIPT = new Map([
         ],
     ],
     [
-        ".experience__content",
+        ".experience__section:nth-of-type(1) ul li p",
         [
-            "⏺ Developed and co-designed Django REST backend for AI-powered study assistant for Discord bot and Website<br /><br />⏺ Extended a React Dashboard decease detection service with token-based authentication, image files management, and decease detection flow<br /><br />⏺ Drone video frames segmentation and annotation of leaves",
-            "⏺ Designed and developed FastAPI service and MySQL database to connect, developed by my teammates, Gemini-powered Coupang Clothes Search Engine to the Web UI",
-            "⏺ Designed and developed the service manager for RED OS using SystemD DBus API and Gtk 4",
-            "⏺ Scripted and optimized Google BigQuery SQL queries for analysts by 30%<br /><br />⏺ Analyzed and presented potential alternative Business Intelligence tools from Russian developers<br /><br />⏺ Collected and prepared data for Conversion Rate prediction model",
+            "Developed and co-designed Django REST backend for AI-powered study assistant for Discord bot and Website",
+            "Extended a React Dashboard decease detection service with token-based authentication, image files management, and decease detection flow",
+            "Drone video frames segmentation and annotation of leaves"
         ],
+    ],
+    [
+        ".experience__section:nth-of-type(2) ul li p",
+        [
+            "Designed and developed FastAPI service and MySQL database to connect, developed by my teammates, Gemini-powered Coupang Clothes Search Engine to the Web UI"
+        ],
+    ],
+    [
+        ".experience__section:nth-of-type(3) ul li p",
+        [
+            "Designed and developed the service manager for RED OS using SystemD DBus API and Gtk 4"
+        ],
+    ],
+    [
+        ".experience__section:nth-of-type(4) ul li p",
+        [
+            "Scripted and optimized Google BigQuery SQL queries for analysts by 30%",
+            "Analyzed and presented potential alternative Business Intelligence tools from Russian developers",
+            "Collected and prepared data for Conversion Rate prediction model"
+        ]
     ],
 ]);
 
@@ -87,13 +106,32 @@ const KOREAN_TRANSCRIPT = new Map([
         ],
     ],
     [
-        ".experience__content",
+        ".experience__section:nth-of-type(1) ul li p",
         [
-            "⏺ Discord 봇 및 웹사이트용 AI 학습 도우미를 위한 Django REST 백엔드 개발 및 공동 설계<br /><br />⏺ React 대시보드 기반 질병 감지 서비스에 토큰 인증, 이미지 파일 관리, 질병 감지 플로우 확장<br /><br />⏺ 드론 영상의 잎사귀 분할 및 주석 작업",
-            "⏺ FastAPI 서비스 및 MySQL 데이터베이스 설계·구현, Gemini 기반 쿠팡 의류 검색 엔진을 웹 UI와 연결 (팀원 개발분 포함)",
-            "⏺ SystemD DBus API와 Gtk 4로 RED OS 서비스 매니저 설계 및 개발",
-            "⏺ Google BigQuery SQL 쿼리 자동화 및 분석가용 최적화(30%)<br /><br />⏺ 러시아 개발자 비즈니스 인텔리전스 대체 솔루션 분석·제안<br /><br />⏺ 전환율 예측 모델을 위한 데이터 수집 및 사전 처리",
+            "Discord 봇 및 웹사이트용 AI 학습 도우미를 위한 Django REST 백엔드 개발 및 공동 설계",
+            "React 대시보드 기반 질병 감지 서비스에 토큰 인증, 이미지 파일 관리, 질병 감지 플로우 확장",
+            "드론 영상의 잎사귀 분할 및 주석 작업"
         ],
+    ],
+    [
+        ".experience__section:nth-of-type(2) ul li p",
+        [
+            "FastAPI 서비스 및 MySQL 데이터베이스 설계·구현, Gemini 기반 쿠팡 의류 검색 엔진을 웹 UI와 연결 (팀원 개발분 포함)"
+        ],
+    ],
+    [
+        ".experience__section:nth-of-type(3) ul li p",
+        [
+            "SystemD DBus API와 Gtk 4로 RED OS 서비스 매니저 설계 및 개발"
+        ],
+    ],
+    [
+        ".experience__section:nth-of-type(4) ul li p",
+        [
+            "Google BigQuery SQL 쿼리 자동화 및 분석가용 최적화(30%)",
+            "러시아 개발자 비즈니스 인텔리전스 대체 솔루션 분석·제안",
+            "전환율 예측 모델을 위한 데이터 수집 및 사전 처리"
+        ]
     ],
 ]);
 
@@ -112,6 +150,7 @@ function setup(language) {
 
     for (let [selector, paragraph] of transcript) {
         if (paragraph instanceof Array) {
+            console.log($(selector).get());
             $(selector)
                 .get()
                 .forEach((element, i) => {
