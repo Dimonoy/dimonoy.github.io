@@ -18,13 +18,15 @@
     justify-self: center;
     width: 36px;
     height: 36px;
-    border: 4px solid var(--clr-primary-bg-contrast-faint-reverse);
+    border: solid var(--clr-primary-bg-contrast-faint-reverse);
+    border-width: 0 3px 3px 0;
     background-color: transparent;
-    border-radius: 100%;
+    transform: rotate(-45deg);
 }
 
 .experience__indicator--active {
-    border: 4px solid var(--clr-primary-fg);
+    border: solid var(--clr-primary-fg);
+    border-width: 0 3px 3px 0;
     filter: var(--drop-shadow-text) var(--drop-shadow-text) var(--drop-shadow-text);
 }
 
