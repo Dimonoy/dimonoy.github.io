@@ -1,12 +1,15 @@
 import { setup as setupTechnologies } from "./modules/technologies.mjs";
-import { updateLocalTime } from "./modules/time.mjs";
+import { updateLocalTime, updateAge } from "./modules/time.mjs";
 
 
 /* Run local-time clock */
 {
     updateLocalTime();
+}
 
-
+/* Update my age */
+{
+    updateAge();
 }
 
 /* Resets active styles for menu elements */
