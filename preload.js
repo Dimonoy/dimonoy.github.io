@@ -24,10 +24,12 @@ import { playSound } from "./modules/audio.mjs";
 
 // Initialize technologies and projects
 {
+    const technologyGroup = "all";
+
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        setupTechnologies("web", "-light");
+        setupTechnologies(technologyGroup, "-light");
     } else {
-        setupTechnologies("web");
+        setupTechnologies(technologyGroup);
     }
 
     setupProjects();
@@ -38,22 +40,24 @@ $(document).on("click", "#svg-lightbulb", () => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         $("body").toggleClass("light");
 
+        const technologyGroup = "all";
+
         if ($("body").hasClass("light")) {
             playSound("lamp_off");
-            setupTechnologies("web");
+            setupTechnologies(technologyGroup);
         } else {
             playSound("lamp_on");
-            setupTechnologies("web", "-light");
+            setupTechnologies(technologyGroup, "-light");
         }
     } else {
         $("body").toggleClass("dark");
 
         if ($("body").hasClass("dark")) {
             playSound("lamp_on");
-            setupTechnologies("web", "-light");
+            setupTechnologies(technologyGroup, "-light");
         } else {
             playSound("lamp_off");
-            setupTechnologies("web");
+            setupTechnologies(technologyGroup);
         }
     }
 });
