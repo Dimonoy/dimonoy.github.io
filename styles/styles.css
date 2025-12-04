@@ -86,7 +86,7 @@ body {
     font-size: var(--fs-normal);
     display: flex;
     flex-direction: column;
-    gap: calc(var(--gap) * 4);
+    gap: calc(var(--gap));
     min-width: 320px;
 }
 
@@ -136,7 +136,7 @@ p:hover {
 main {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--gap) * 4);
+    gap: calc(var(--gap) * 2);
 }
 
 button {

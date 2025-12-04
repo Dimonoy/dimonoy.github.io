@@ -150,7 +150,6 @@ function setup(language) {
 
     for (let [selector, paragraph] of transcript) {
         if (paragraph instanceof Array) {
-            console.log($(selector).get());
             $(selector)
                 .get()
                 .forEach((element, i) => {

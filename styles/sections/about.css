@@ -116,18 +116,17 @@
 .toolbox__cards {
     color: var(--clr-primary-fg);
     user-select: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: calc(var(--gap) * 0.25);
-    row-gap: var(--gap);
-    margin-top: var(--gap);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 32px;
 }
 
 .toolbox__card {
-    place-self: center;
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
     width: 125px;
     height: 24px;
     gap: 8px;
@@ -172,5 +171,18 @@
 
     .about__facts {
         gap: calc(var(--gap) * 0.25);
+    }
+
+    .toolbox__card {
+        width: 80px;
+    }
+
+    .toolbox__card>img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .toolbox__card>p {
+        font-size: var(--fs-normal);
     }
 }

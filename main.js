@@ -44,7 +44,7 @@ function onScroll() {
         $("#main-header").get(0).classList.remove("main-header-background");
     }
 
-    const viewportMid = (window.innerHeight / 2) * 1.8;
+    const viewportMid = (window.innerHeight / 2) * 1.4;
     const elements = document.querySelectorAll(".experience__indicator");
     const elementsMid = [];
     elements.forEach((element) => {
