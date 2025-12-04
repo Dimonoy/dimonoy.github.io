@@ -1,8 +1,32 @@
+.experience {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: var(--gap);
+}
+
+.experience>button {
+    background-color: var(--clr-accent-link);
+    border: 0;
+    padding: 0;
+    transition: filter var(--lightup-transition);
+}
+
+.experience>button:hover {
+    filter: var(--drop-shadow-link);
+}
+
+.experience a {
+    display: block;
+    align-content: center;
+    height: 100%;
+    color: var(--clr-primary-bg);
+}
+
 .experience__timeline {
-    margin-top: var(--gap);
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-row-gap: calc(var(--gap) * 2);
+    grid-row-gap: calc(var(--gap) * 0.6);
 }
 
 .experience__section {
