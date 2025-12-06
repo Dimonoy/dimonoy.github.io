@@ -44,19 +44,22 @@
 }
 
 .projects__slide__info>a {
-    background-color: var(--clr-accent-link);
+    /* background-color: var(--clr-accent-link); */
+    background-color: #444;
     width: 120px;
     height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--clr-primary-bg);
-    transition: filter var(--lightup-transition);
+    /* transition: filter var(--lightup-transition); */
+    cursor: default;
+    pointer-events: none;
 }
 
-.projects__slide__info>a:hover {
-    filter: var(--drop-shadow-link);
-}
+/* .projects__slide__info>a:hover { */
+/*     filter: var(--drop-shadow-link); */
+/* } */
 
 .projects__slide__info__text {
     display: flex;
