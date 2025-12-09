@@ -7,77 +7,6 @@ export const MY_BIRTH_DATE = new Date("2003-12-23T00:00:00");
 export const CODING_START_DATE = new Date("2020-01-01T00:00:00");
 
 // Transcripts
-export const ENGLISH_TRANSCRIPT = new Map([
-    [".main-header > .menu a", ["About", "Projects", "Experience"]],
-    [
-        ".about__header > h1",
-        "I’ll create reliable systems to empower your business",
-    ],
-    [
-        ".about__facts p",
-        [
-            "Open for part-time",
-            "Yongin-si, South Korea",
-            "21 years old",
-            "6 years of experience",
-        ],
-    ],
-    [
-        ".about__left-column > p",
-        "I’m Cho Hyunwoo, an undergraduate Hanyang University student.<br /><br />I deliver scalable and performant software and data-driven solutions using proven web technologies and modern data science tools.",
-    ],
-    [".about__actions > button > a", "Download CV"],
-    [".toolbox__header > .menu a", ["Web", "Data"]],
-    [".projects > h1", "Projects"],
-    [".experience > h1", "Experience"],
-    [
-        ".experience__title > h2",
-        [
-            "Student Community Project",
-            "Hackseoul Competition - Coupang Tower",
-            "RED SOFT",
-            "KORTROS",
-        ],
-    ],
-    [
-        ".experience__title > p",
-        [
-            "Contributor, 08/2024 - 02/2025, 06/2025 - present",
-            "Participant, 24/08/2024 - 25/08/2024",
-            "Intern Software Developer, 07/2023 - 08/2023",
-            "Intern Data Analyst, 05/2022 - 06/2022",
-        ],
-    ],
-    [
-        ".experience__section:nth-of-type(1) ul li p",
-        [
-            "Developed and co-designed Django REST backend for AI-powered study assistant for Discord bot and Website",
-            "Extended a React Dashboard decease detection service with token-based authentication, image files management, and decease detection flow",
-            "Drone video frames segmentation and annotation of leaves"
-        ],
-    ],
-    [
-        ".experience__section:nth-of-type(2) ul li p",
-        [
-            "Designed and developed FastAPI service and MySQL database to connect, developed by my teammates, Gemini-powered Coupang Clothes Search Engine to the Web UI"
-        ],
-    ],
-    [
-        ".experience__section:nth-of-type(3) ul li p",
-        [
-            "Designed and developed the service manager for RED OS using SystemD DBus API and Gtk 4"
-        ],
-    ],
-    [
-        ".experience__section:nth-of-type(4) ul li p",
-        [
-            "Scripted and optimized Google BigQuery SQL queries for analysts by 30%",
-            "Analyzed and presented potential alternative Business Intelligence tools from Russian developers",
-            "Collected and prepared data for Conversion Rate prediction model"
-        ]
-    ],
-]);
-
 export const KOREAN_TRANSCRIPT = new Map([
     ["[data-transcript-group=menu][data-transcript-item=about]", "소개"],
     ["[data-transcript-group=menu][data-transcript-item=projects]", "프로젝트"],
@@ -85,7 +14,6 @@ export const KOREAN_TRANSCRIPT = new Map([
 
     ["[data-transcript-group=main-header][data-transcript-item=headline]", "신뢰할 수 있는 시스템을 구축하여 귀사의 비즈니스를 지원합니다"],
     ["[data-transcript-group=main-header][data-transcript-item=paragraph]", "저는 조현우입니다. 한양대학교 학부생입니다.<br /><br />검증된 웹 기술과 최신 데이터 과학 도구를 활용하여 확장 가능하고 성능이 우수한 소프트웨어 및 데이터 기반 솔루션을 제공합니다."],
-    ["[data-transcript-group=main-header][data-transcript-item=action]", "See Experience"],
 
     ["[data-transcript-group=facts][data-transcript-item=part-time]", "파트타임 가능"],
     ["[data-transcript-group=facts][data-transcript-item=location]", "경기도 용인시"],

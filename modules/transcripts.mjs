@@ -1,4 +1,4 @@
-import { ENGLISH_TRANSCRIPT, KOREAN_TRANSCRIPT } from "./constants.mjs";
+import { KOREAN_TRANSCRIPT } from "./constants.mjs";
 
 
 const originalTranscriptCache = new Map();
