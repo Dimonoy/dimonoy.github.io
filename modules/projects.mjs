@@ -1,29 +1,4 @@
-const projects = [
-    {
-        imageUrl: "../public/images/placeholder-16-9.png",
-        title: "Project 1",
-        description: "Upcoming...",
-        link: "http://localhost:8000/",
-    },
-    {
-        imageUrl: "../public/images/placeholder-16-9.png",
-        title: "Project 2",
-        description: "Upcoming...",
-        link: "http://localhost:8000/",
-    },
-    {
-        imageUrl: "../public/images/placeholder-16-9.png",
-        title: "Project 3",
-        description: "Upcoming...",
-        link: "http://localhost:8000/",
-    },
-    {
-        imageUrl: "../public/images/placeholder-16-9.png",
-        title: "Project 4",
-        description: "Upcoming...",
-        link: "http://localhost:8000/",
-    },
-];
+import { PROJECTS } from "./constants.mjs";
 
 // Labels: {imgUrl} {title} {description} {link} {index}
 const htmlContentTemplate = `
@@ -68,7 +43,7 @@ function updateActiveElements(page) {
  * @returns {number} - Correct index
  */
 function setup() {
-    projects.forEach((project, index) => {
+    PROJECTS.forEach((project, index) => {
         const htmlContent = htmlContentTemplate
             .replace("{imgUrl}", project.imageUrl)
             .replaceAll("{title}", project.title)
@@ -81,7 +56,7 @@ function setup() {
         document.querySelector(".projects__slide:last-child").addEventListener("click", (event) => {
             const boundary = window.innerWidth / 2;
 
-            if (event.clientX >= boundary && projects.length - 1 !== index) {
+            if (event.clientX >= boundary && PROJECTS.length - 1 !== index) {
                 updateActiveElements(index + 2);
             } else if (event.clientX < boundary && index !== 0) {
                 updateActiveElements(index);

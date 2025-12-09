@@ -65,8 +65,8 @@ portfolio/
 - [x] Redesign navigation bars
 - [x] Convert experience detail paragraphs to experience detail bullet points
 - [x] Reorganize javascript
-- [ ] Reduce technologies
-- [ ] Improve transcript handling with ids instead of selectors
+- [x] Reduce technologies
+- [x] Improve transcript handling with data attrs instead of selectors
 - [ ] Add improvements to transcripts
 - [ ] Add more project showcase items
 - [ ] Auto-calculate experience and add the note of non-working experience

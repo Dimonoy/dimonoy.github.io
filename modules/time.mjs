@@ -1,8 +1,8 @@
+import { MY_BIRTH_DATE, CODING_START_DATE } from "./constants.mjs";
+
 const TEMPLATE_LOCAL_TIME = "LOCAL TIME</br>{hour}:{minute} GMT{gmt}";
 const TEMPLATE_AGE = "{age} years old";
 const TEMPLATE_EXPERIENCE = "{nYears} years experience (non-working)";
-const MY_BIRTH_DATE = new Date("2003-12-23T00:00:00");
-const CODING_START_DATE = new Date("2020-01-01T00:00:00");
 
 let previousMinute = null;
 
