@@ -50,10 +50,16 @@ const projectIndicatorTemplate = `
  * @param {number} page - Page number.
  */
 function updateActiveElements(page) {
-    $(".projects__slide").removeClass("projects__slide--active");
-    $(".projects__indicator").removeClass("projects__indicator--active");
-    $(`.projects__slide:nth-child(${page})`).addClass("projects__slide--active");
-    $(`.projects__indicator:nth-child(${page})`).addClass("projects__indicator--active");
+    document.querySelectorAll(".projects__slide").forEach((projectSlideElement) => {
+        projectSlideElement.classList.remove("projects__slide--active");
+    });
+
+    document.querySelectorAll(".projects__indicator--active").forEach((projectIndicatorElement) => {
+        projectIndicatorElement.classList.remove("projects__indicator--active");
+    });
+
+    document.querySelector(`.projects__slide:nth-child(${page})`).classList.add("projects__slide--active");
+    document.querySelector(`.projects__indicator:nth-child(${page})`).classList.add("projects__indicator--active");
 }
 
 /**
@@ -69,14 +75,10 @@ function setup() {
             .replace("{description}", project.description)
             .replace("{link}", project.link);
 
-        $(".projects__slide-show").append(htmlContent);
-        $(".projects__indicators").append(projectIndicatorTemplate);
-
-        $(".projects__indicator:last-child").click(() => {
-            updateActiveElements(index + 1);
-        });
-
-        $(".projects__slide:last-child").click(event => {
+        document.querySelector(".projects__slide-show").insertAdjacentHTML("beforeend", htmlContent);
+        document.querySelector(".projects__indicators").insertAdjacentHTML("beforeend", projectIndicatorTemplate);
+        document.querySelector(".projects__indicator:last-child").addEventListener("click", () => updateActiveElements(index + 1));
+        document.querySelector(".projects__slide:last-child").addEventListener("click", (event) => {
             const boundary = window.innerWidth / 2;
 
             if (event.clientX >= boundary && projects.length - 1 !== index) {
@@ -84,11 +86,11 @@ function setup() {
             } else if (event.clientX < boundary && index !== 0) {
                 updateActiveElements(index);
             }
-        });
+        })
     });
 
-    $(".projects__slide:first-child").addClass("projects__slide--active");
-    $(".projects__indicator:first-child").addClass("projects__indicator--active");
+    document.querySelector(".projects__slide:first-child").classList.add("projects__slide--active");
+    document.querySelector(".projects__indicator:first-child").classList.add("projects__indicator--active");
 }
 
 export { setup };

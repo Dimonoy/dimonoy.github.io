@@ -64,9 +64,16 @@ portfolio/
 - [x] Fix theme coloring issue for default light colorscheme
 - [x] Redesign navigation bars
 - [x] Convert experience detail paragraphs to experience detail bullet points
-- [ ] Reorganize javascript
+- [x] Reorganize javascript
+- [ ] Reduce technologies
+- [ ] Improve transcript handling with ids instead of selectors
 - [ ] Add improvements to transcripts
 - [ ] Add more project showcase items
+- [ ] Auto-calculate experience and add the note of non-working experience
+- [ ] Remove "See Experience" button
+- [ ] Animate menubar with selection indication when respective section is opened
+- [ ] Add explicit navigation to projects instead of implicit left/right-side click
+- [ ] Improve spacing between elements, feels the separation of blocks is not explicit
 
 ## 📞 Contact
 

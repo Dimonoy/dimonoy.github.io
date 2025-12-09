@@ -150,13 +150,11 @@ function setup(language) {
 
     for (let [selector, paragraph] of transcript) {
         if (paragraph instanceof Array) {
-            $(selector)
-                .get()
-                .forEach((element, i) => {
-                    element.innerHTML = paragraph[i];
-                });
+            document.querySelectorAll(selector).forEach((element, i) => {
+                element.innerHTML = paragraph[i];
+            });
         } else if (typeof paragraph === "string") {
-            $(selector).get(0).innerHTML = paragraph;
+            document.querySelector(selector).innerHTML = paragraph;
         } else {
             throw Error(
                 `Invalid paragraph type: ${typeof paragraph}. Must be array or string`,

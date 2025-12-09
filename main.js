@@ -1,47 +1,36 @@
-import { setup as setupTechnologies } from "./modules/technologies.mjs";
-import { updateLocalTime, updateAge } from "./modules/time.mjs";
+import { updateLocalTime, updateAge, updateExperience } from "./modules/time.mjs";
 
 
 /* Run local-time clock */
 {
+    // Run local-time clock
     updateLocalTime();
-}
 
-/* Update my age */
-{
+    // Update my age
     updateAge();
+
+    // Update amount of non-working experience
+    updateExperience();
 }
 
 /* Resets active styles for menu elements */
-$(".main-header .menu__item").click((event) => {
-    $(".main-header .menu__item").removeClass("menu__item--active");
-    event.target.parentNode.classList.add("menu__item--active");
-});
-
-/* Toggles between different technology categories */
-$("#toolbox .menu__item").click((event) => {
-    $("#toolbox .menu__item").removeClass("menu__item--active");
-    event.target.parentNode.classList.add("menu__item--active");
-
-    const option = event.target.parentNode.dataset.option;
-
-    if (
-        ($("body").hasClass("dark") ||
-            window.matchMedia("(prefers-color-scheme: dark)").matches) &&
-        !$("body").hasClass("light")
-    ) {
-        setupTechnologies(option, "-light");
-    } else {
-        setupTechnologies(option);
-    }
+document.querySelectorAll(".main-header .menu__item").forEach((menuItem) => {
+    menuItem.addEventListener("click", (event) => {
+        for (const menuItem of document.querySelectorAll(".main-header .menu__item")) {
+            menuItem.classList.remove("menu__item--active");
+        }
+        event.target.parentNode.classList.add("menu__item--active");
+    })
 });
 
 function onScroll() {
     /* Add header background when scrolling down for the fixed main header */
+    const mainHeader = document.getElementById("main-header");
+
     if (window.scrollY > 10) {
-        $("#main-header").get(0).classList.add("main-header-background");
+        mainHeader.classList.add("main-header-background");
     } else {
-        $("#main-header").get(0).classList.remove("main-header-background");
+        mainHeader.classList.remove("main-header-background");
     }
 
     const viewportMid = (window.innerHeight / 2) * 1.4;
@@ -64,25 +53,25 @@ function onScroll() {
 
 let ticking = false;
 window.addEventListener("scroll", () => {
-if (!ticking) {
-    window.requestAnimationFrame(() => {
-        onScroll();
-        ticking = false;
-    });
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            onScroll();
+            ticking = false;
+        });
 
-    ticking = true;
-}
+        ticking = true;
+    }
 });
 
 /* Toggle mobile menu */
-$(".main-header__hamburger").click(() => {
-    $(".main-header__mobile-menu").toggleClass("main-header__mobile-menu--active");
+document.querySelector(".main-header__hamburger").addEventListener("click", () => {
+    document.querySelector(".main-header__mobile-menu").classList.toggle("main-header__mobile-menu--active");
 });
 
-$(".main-header__close").click(() => {
-    $(".main-header__mobile-menu").toggleClass("main-header__mobile-menu--active");
+document.querySelector(".main-header__close").addEventListener("click", () => {
+    document.querySelector(".main-header__mobile-menu").classList.toggle("main-header__mobile-menu--active");
 });
 
-$(".main-header__mobile-menu li:first-child > a").click((e) => {
-    $(".main-header__mobile-menu").toggleClass("main-header__mobile-menu--active");
+document.querySelector(".main-header__mobile-menu li:first-child > a").addEventListener("click", () => {
+    document.querySelector(".main-header__mobile-menu").classList.toggle("main-header__mobile-menu--active");
 });

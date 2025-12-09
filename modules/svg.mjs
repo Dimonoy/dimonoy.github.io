@@ -2,11 +2,11 @@
  * Dynamically load SVG icons by replacing respective elements with ID with SVG file content.
  * @param {string} name - The name of the SVG icon to load without the file extension.
  * @param {string} id - The ID of the element to replace with the SVG content.
- * @param {string?} classes - The classes to apply to the SVG element.
+ * @param {Function?} eventCallback - anonymous function to attach to event listener of the svg
  */
-function loadSvg(name, id, classes) {
+function loadSvg(name, id, eventCallback) {
     const pathToSvg = `public/icons/${name}.svg`;
-    const svgElemId = `#${id}`;
+    const svgElementId = id;
 
     fetch(pathToSvg)
         .then((response) => {
@@ -16,11 +16,18 @@ function loadSvg(name, id, classes) {
 
             return response.text();
         })
-        .then((svgText) =>
-            $(svgElemId).replaceWith(
-                `<span class="${classes}" id="${svgElemId.slice(1)}">${svgText}</span>`,
-            ),
-        )
+        .then((svgText) => {
+            let svgElement = document.getElementById(svgElementId);
+
+            svgElement.outerHTML =
+                `<span id="${svgElementId}">${svgText}</span>`;
+
+            svgElement = document.getElementById(svgElementId);
+
+            if (eventCallback) {
+                svgElement.addEventListener("click", eventCallback);
+            }
+        })
         .catch((error) => {
             console.error(`Error loading SVG icon '${pathToSvg}':`, error.message);
         });

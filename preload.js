@@ -5,10 +5,47 @@ import hiddenElementsToShow from "./modules/target_animation_elements.mjs";
 import { setup as setupLanguage } from "./modules/transcripts.mjs";
 import { playSound } from "./modules/audio.mjs";
 
+let language = null;
+
 // Load SVG icons
 {
-    loadSvg("Lightbulb", "svg-lightbulb");
-    loadSvg("Language", "svg-language");
+    loadSvg("Lightbulb", "svg-lightbulb", () => {
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            const bodyElement = document.querySelector("body");
+
+            bodyElement.classList.toggle("light");
+
+            if (bodyElement.classList.contains("light")) {
+                playSound("lamp_off");
+                setupTechnologies();
+            } else {
+                playSound("lamp_on");
+                setupTechnologies("-light");
+            }
+        } else {
+            bodyElement.classList.toggle("dakr");
+
+            if (bodyElement.classList.contains("dark")) {
+                playSound("lamp_on");
+                setupTechnologies(technologyGroup, "-light");
+            } else {
+                playSound("lamp_off");
+                setupTechnologies(technologyGroup);
+            }
+        }
+    });
+
+    loadSvg("Language", "svg-language", () => {
+        const htmlElement = document.querySelector("html");
+
+        language = htmlElement.getAttribute("lang");
+
+        language = language === "ko" ? "en" : "ko";
+        htmlElement.setAttribute("lang", language);
+
+        setupLanguage(language);
+    });
+
     loadSvg("Github", "svg-github");
     loadSvg("LinkedIn", "svg-linkedin");
     loadSvg("Gmail", "svg-email");
@@ -19,58 +56,19 @@ import { playSound } from "./modules/audio.mjs";
 
 // Set language
 {
-    $("html").get(0).lang = "en";
+    document.querySelector("html").lang = "en";
 }
 
 // Initialize technologies and projects
 {
-    const technologyGroup = "all";
-
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        setupTechnologies(technologyGroup, "-light");
+        setupTechnologies("-light");
     } else {
-        setupTechnologies(technologyGroup);
+        setupTechnologies();
     }
 
     setupProjects();
 }
-
-// Toggle theme
-$(document).on("click", "#svg-lightbulb", () => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        $("body").toggleClass("light");
-
-        const technologyGroup = "all";
-
-        if ($("body").hasClass("light")) {
-            playSound("lamp_off");
-            setupTechnologies(technologyGroup);
-        } else {
-            playSound("lamp_on");
-            setupTechnologies(technologyGroup, "-light");
-        }
-    } else {
-        $("body").toggleClass("dark");
-
-        if ($("body").hasClass("dark")) {
-            playSound("lamp_on");
-            setupTechnologies(technologyGroup, "-light");
-        } else {
-            playSound("lamp_off");
-            setupTechnologies(technologyGroup);
-        }
-    }
-});
-
-let language = null;
-$(document).on("click", "#svg-language", () => {
-    language = $("html").attr("lang");
-
-    language = language === "ko" ? "en" : "ko";
-    $("html").attr("lang", language);
-
-    setupLanguage(language);
-});
 
 /**
  * Check if the browser is Chrome
