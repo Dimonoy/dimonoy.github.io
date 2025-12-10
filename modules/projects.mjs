@@ -100,7 +100,6 @@ function setup() {
             const boundary = window.innerWidth / 2;
             const page = index + 1;
 
-            console.log(page);
             if (event.clientX >= boundary && PROJECTS.length !== page && page !== 1) {
                 clearControls(page);
                 addControl(page, "next");

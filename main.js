@@ -27,6 +27,7 @@ function onScroll() {
     /* Add header background when scrolling down for the fixed main header */
     const mainHeader = document.getElementById("main-header");
 
+    console.log(window.scrollY);
     if (window.scrollY > 10) {
         mainHeader.classList.add("main-header-background");
     } else {

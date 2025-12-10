@@ -155,7 +155,7 @@
 
     .main-header-background {
         background-color: transparent;
-        backdrop-filter: none;
+        backdrop-filter: blur(30px);
     }
 
     .main-header__hamburger {
