@@ -127,6 +127,7 @@ h2:hover {
 p {
     transition: filter var(--lightup-transition);
     font-size: var(--fs-normal);
+    font-weight: var(--fw-light);
 }
 
 p:hover {

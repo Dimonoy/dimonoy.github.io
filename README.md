@@ -69,9 +69,9 @@ portfolio/
 - [x] Improve transcript handling with data attrs instead of selectors
 - [x] Auto-calculate experience and add the note of non-working experience
 - [x] Remove "See Experience" button
+- [x] Improve spacing between elements, feels the separation of blocks is not explicit
 - [ ] Animate menubar with selection indication when respective section is opened
 - [ ] Add explicit navigation to projects instead of implicit left/right-side click
-- [ ] Improve spacing between elements, feels the separation of blocks is not explicit
 
 ## 📞 Contact
 

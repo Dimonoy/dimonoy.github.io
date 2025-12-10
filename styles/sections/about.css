@@ -116,11 +116,9 @@
 .toolbox__cards {
     color: var(--clr-primary-fg);
     user-select: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    row-gap: 32px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: var(--gap);
 }
 
 .toolbox__card {
@@ -128,7 +126,6 @@
     align-items: center;
     justify-content: center;
     width: 125px;
-    height: 24px;
     gap: 8px;
     transition: filter 50ms linear;
 }
