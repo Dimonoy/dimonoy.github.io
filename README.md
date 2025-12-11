@@ -71,7 +71,7 @@ portfolio/
 - [x] Remove "See Experience" button
 - [x] Improve spacing between elements, feels the separation of blocks is not explicit
 - [x] Add explicit navigation to projects instead of implicit left/right-side click
-- [ ] Animate menubar with selection indication when respective section is opened
+- [x] Animate menubar with selection indication when respective section is opened
 
 ## 📞 Contact
 
