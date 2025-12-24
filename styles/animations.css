@@ -1,50 +1,41 @@
-.hidden {
-    opacity: 0;
-    transition: opacity 500ms ease-in-out;
-}
-
-.shown {
-    opacity: 1;
-}
-
 @keyframes wavyGlowing {
-    0% {
-        filter: var(--drop-shadow-header) opacity(1);
-    }
+  0% {
+    filter: var(--drop-shadow-header) opacity(1);
+  }
 
-    40% {
-        filter: var(--drop-shadow-header) opacity(0.7);
-    }
+  40% {
+    filter: var(--drop-shadow-header) opacity(0.7);
+  }
 
-    45% {
-        filter: var(--drop-shadow-header) opacity(1);
-    }
+  45% {
+    filter: var(--drop-shadow-header) opacity(1);
+  }
 
-    60% {
-        filter: var(--drop-shadow-header) opacity(0.7);
-    }
+  60% {
+    filter: var(--drop-shadow-header) opacity(0.7);
+  }
 
-    65% {
-        filter: var(--drop-shadow-header) opacity(1);
-    }
+  65% {
+    filter: var(--drop-shadow-header) opacity(1);
+  }
 
-    70% {
-        filter: var(--drop-shadow-header) opacity(0.7);
-    }
+  70% {
+    filter: var(--drop-shadow-header) opacity(0.7);
+  }
 
-    75% {
-        filter: var(--drop-shadow-header) opacity(1);
-    }
+  75% {
+    filter: var(--drop-shadow-header) opacity(1);
+  }
 
-    90% {
-        filter: var(--drop-shadow-header) opacity(0.7);
-    }
+  90% {
+    filter: var(--drop-shadow-header) opacity(0.7);
+  }
 
-    95% {
-        filter: var(--drop-shadow-header) opacity(1);
-    }
+  95% {
+    filter: var(--drop-shadow-header) opacity(1);
+  }
 
-    100% {
-        filter: var(--drop-shadow-header) opacity(1);
-    }
+  100% {
+    filter: var(--drop-shadow-header) opacity(1);
+  }
 }
