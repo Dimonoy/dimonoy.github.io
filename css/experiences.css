@@ -1,0 +1,36 @@
+.experiences__group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px;
+}
+
+.experiences__card-group {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.experiences__details {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 8px;
+}
+
+@media (width >=40rem) {
+  .experiences__group {
+    gap: 32px;
+  }
+
+  .experiences__card-group {
+    gap: 32px;
+    padding: 32px;
+  }
+}

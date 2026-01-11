@@ -1,0 +1,111 @@
+@import "./fonts.css";
+@import "./menu.css";
+@import "./components.css";
+
+:root {
+  color-scheme: light dark;
+
+  --clr-white-100: hsl(0 0% 25.5%);
+  --clr-white-400: hsl(0 0% 86.7);
+  --clr-black-400: hsl(0 0% 13.3%);
+  --clr-black-700: hsl(0 0% 0%);
+  --linear-gradient-steel: linear-gradient(315deg, #444444 5%, #666666 25%, #888888 45%, #aaaaaa 75%, #ffffff 100%);
+
+  --fs-2xs: 0.5rem;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 1.875rem;
+  --fs-4xl: 2.25rem;
+  --fs-5xl: 3rem;
+
+  /* --- USED --- */
+
+  --clr-primary: var(--clr-black-400);
+  --clr-secondary: var(--clr-white-400);
+
+  --nm--drop-shadow: -3px -3px 7px var(--clr-black-700), 3px 3px 7px var(--clr-white-100);
+  --pressed-shadow: inset -3px -3px 7px var(--clr-white-100), inset 3px 3px 7px var(--clr-black-700);
+  --facade-shadow: -3px -3px 16px var(--clr-white-100), 3px 3px 16px var(--clr-black-700);
+  --clickable-shadow: -1px -1px 3px var(--clr-white-100), 1px 1px 7px var(--clr-black-700), inset -1px -1px 3px var(--clr-black-700), inset 1px 1px 3px var(--clr-white-100);
+  --light-clickable-shadow: -1px -1px 3px var(--clr-white-100), 1px 1px 3px var(--clr-black-700), inset -1px -1px 1px var(--clr-black-700), inset 1px 1px 1px var(--clr-white-100);
+  --light-item-shadow: var(--light-clickable-shadow);
+  --text-pop-out-shadow: -3px -3px 3px var(--clr-white-100), 3px 3px 3px var(--clr-black-700);
+
+  --border-radius: 10px;
+
+  --fs-tiny: var(--fs-2xs);
+  --fs-normal: var(--fs-sm);
+  --fs-heading-1: var(--fs-2xl);
+
+  --fw-light: 300;
+  --fw-medium: 500;
+  --fw-bold: 700;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::selection {
+  background-color: var(--clr-secondary);
+  color: var(--clr-primary);
+}
+
+html {
+  font-family: "Sunflower", sans-serif;
+  font-weight: var(--fw-light);
+  overflow: scroll;
+  scrollbar-color: var(--clr-secondary) var(--clr-primary);
+  scrollbar-width: thin;
+}
+
+body {
+  background-color: var(--clr-primary);
+  color: var(--clr-secondary);
+}
+
+button {
+  border: none;
+  background-color: var(--clr-primary);
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: var(--fs-heading-1);
+  text-transform: uppercase;
+}
+
+p {
+  font-size: var(--fs-normal);
+}
+
+a {
+  text-decoration: none;
+  font-size: var(--fs-normal);
+  color: inherit;
+}
+
+main {
+  margin-top: 64px;
+}
+
+footer {
+  margin-top: 64px;
+}
+
+@media (width >=40rem) {
+  :root {
+    --fs-tiny: var(--fs-xs);
+    --fs-normal: var(--fs-base);
+    --fs-heading-1: var(--fs-5xl);
+  }
+}
